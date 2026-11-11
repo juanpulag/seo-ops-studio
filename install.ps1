@@ -144,7 +144,7 @@ $RepoUrl = "https://github.com/juanpulag/seo-ops-studio"
 # This default MUST be bumped on every release. CI guard
 # (tests/test_manifest_consistency.py) enforces this matches plugin.json.
 # Override: $env:SEO_OPS_TAG = 'main'; .\install.ps1
-$RepoTag = if ($env:SEO_OPS_TAG) { $env:SEO_OPS_TAG } else { 'v0.3.0' }
+$RepoTag = if ($env:SEO_OPS_TAG) { $env:SEO_OPS_TAG } else { 'v0.4.0' }
 
 # Create directories
 New-Item -ItemType Directory -Force -Path $SkillDir | Out-Null

@@ -2,7 +2,7 @@
 name: seo-ops-matomo
 description: Matomo Reporting API extension. Self-hosted or Matomo Cloud analytics as a GA4 alternative or complement. Organic traffic, landing pages, device / country breakdowns, referrers, search keywords. Triggers on "Matomo", "self-hosted analytics", "analytics ohne Google", "GA4 alternative", "Matomo Reporting", "Piwik".
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 compatibility: "Requires a Matomo instance URL and API token in ~/.config/seo-ops-studio/matomo.json (0600), or MATOMO_URL / MATOMO_API_TOKEN / MATOMO_SITE_ID in the environment. Run extensions/matomo/install.sh to configure."
 ---
 

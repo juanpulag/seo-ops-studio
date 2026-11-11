@@ -12,7 +12,7 @@ license: MIT
 metadata:
   author: AgriciDaniel
   original_author: "Dan Colta (Pro Hub Challenge)"
-  version: "0.3.0"
+  version: "0.4.0"
   category: seo
 ---
 

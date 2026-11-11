@@ -12,7 +12,7 @@ main() {
     # This default MUST be bumped on every release. CI guard
     # (tests/test_manifest_consistency.py) enforces this matches plugin.json.
     # Override: SEO_OPS_TAG=main bash install.sh
-    REPO_TAG="${SEO_OPS_TAG:-v0.3.0}"
+    REPO_TAG="${SEO_OPS_TAG:-v0.4.0}"
 
     echo "════════════════════════════════════════"
     echo "║   SEO Ops Studio - Installer             ║"

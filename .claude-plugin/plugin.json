@@ -1,6 +1,6 @@
 {
   "name": "seo-ops-studio",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "SEO Ops Studio: full SEO audits with real data and PDF reports from Claude Code. 28 sub-skills (24 core, 1 orchestrator, 1 framework, 2 extension) and 19 sub-agents: guided API onboarding, parallel specialists, weighted Health Score and technical, content, schema, GEO, hreflang, local and e-commerce analyses. Based on claude-seo (MIT).",
   "author": {
     "name": "SEO Ops Studio",

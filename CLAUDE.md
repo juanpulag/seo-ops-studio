@@ -36,7 +36,7 @@ seo-ops-studio/
   CONTRIBUTORS.md                    # Community credits (Pro Hub Challenge)
   AGENTS.md                          # Multi-platform agent instructions (Cursor, Antigravity)
   .claude-plugin/
-    plugin.json                    # Plugin manifest (v0.3.0)
+    plugin.json                    # Plugin manifest (v0.4.0)
     marketplace.json               # Marketplace catalog for distribution
   skills/                            # 28 sub-skills (auto-discovered; includes the 2 SEO Ops skills)
     seo/                           # Main orchestrator skill

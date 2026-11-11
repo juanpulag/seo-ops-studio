@@ -2,7 +2,7 @@
 name: seo-ops-ahrefs
 description: Ahrefs API analyst (extension). Reads referring domains, backlinks, organic keywords, and content explorer data via the tested @ahrefs/mcp@0.0.11 server. Pairs with seo-ops-backlinks for multi-source confidence weighting.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 compatibility: "Tested with @ahrefs/mcp@0.0.11 (installed by extensions/ahrefs/install.sh)."
 ---
 

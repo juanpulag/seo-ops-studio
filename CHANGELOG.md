@@ -2,6 +2,11 @@
 
 All notable changes to SEO Ops Studio are recorded here. Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/).
 
+## [0.4.0] - 2026-11-11
+
+### Changed
+- The Premium edition's feature list now includes re-audits that verify fixes. No command changes in this edition.
+
 ## [0.3.0] - 2026-11-11
 
 ### Removed
