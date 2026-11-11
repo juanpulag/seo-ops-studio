@@ -1,0 +1,57 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "seo-ops-studio",
+  "owner": {
+    "name": "SEO Ops Studio"
+  },
+  "metadata": {
+    "description": "SEO Ops Studio: operación SEO multi-cliente sobre Claude Code. 28 sub-skills y 19 sub-agents.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "seo-ops-studio",
+      "source": "./",
+      "description": "SEO Ops Studio: operación SEO multi-cliente para consultores y agencias. 28 sub-skills (24 core, 1 orchestrator, 1 framework, 2 extension) y 19 sub-agents: onboarding guiado de APIs, un proyecto por cliente, auditorías con PDF, hallazgos convertidos en tareas de Notion sin duplicados, problemas transversales entre sitios y tableros en Looker Studio. Basado en claude-seo (MIT).",
+      "author": {
+        "name": "SEO Ops Studio",
+        "url": "https://github.com/juanpulag/seo-ops-studio"
+      },
+      "category": "marketing",
+      "homepage": "https://github.com/juanpulag/seo-ops-studio",
+      "keywords": [
+        "seo",
+        "agencia-seo",
+        "consultor-seo",
+        "multi-cliente",
+        "backlog",
+        "notion",
+        "looker-studio",
+        "auditoria-seo",
+        "search-console",
+        "ga4",
+        "dataforseo",
+        "technical-seo",
+        "content-quality",
+        "e-e-a-t",
+        "schema-markup",
+        "core-web-vitals",
+        "local-seo",
+        "geo",
+        "ai-search",
+        "sitemap",
+        "image-optimization",
+        "image-serp",
+        "google-images",
+        "hreflang",
+        "google-search-console",
+        "pagespeed",
+        "crux",
+        "ga4",
+        "backlinks",
+        "moz",
+        "bing-webmaster"
+      ]
+    }
+  ]
+}

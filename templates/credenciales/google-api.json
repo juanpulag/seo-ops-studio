@@ -1,0 +1,7 @@
+{
+  "_ayuda": "SEO Ops Studio · credenciales de Google. Guía: docs/es/02-cuenta-de-servicio.md. Este archivo vive en ~/.config/seo-ops-studio/ y NUNCA se comparte ni se sube a Git.",
+  "service_account_path": null,
+  "api_key": null,
+  "default_property": null,
+  "ga4_property_id": null
+}

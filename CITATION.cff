@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: SEO Ops Studio
+message: >-
+  Si usas este software, cítalo con los metadatos de este archivo.
+  SEO Ops Studio está basado en claude-seo (MIT), de Daniel Agrici.
+type: software
+authors:
+  - name: SEO Ops Studio
+repository-code: 'https://github.com/juanpulag/seo-ops-studio'
+license: MIT
+version: 0.1.0
+date-released: '2026-11-06'
+keywords:
+  - seo
+  - claude-code
+  - agencia-seo
+  - backlog
+  - notion
+  - looker-studio
+references:
+  - type: software
+    title: Claude SEO
+    authors:
+      - alias: AgriciDaniel
+        given-names: Daniel
+        family-names: Agrici
+    repository-code: 'https://github.com/AgriciDaniel/claude-seo'
+    license: MIT
+    version: 2.5.0
