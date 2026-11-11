@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "SEO Ops Studio: full SEO audits with PDF reports on Claude Code. 28 sub-skills and 19 sub-agents.",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
@@ -26,7 +26,6 @@
         "multi-client",
         "backlog",
         "notion",
-        "looker-studio",
         "seo-audit",
         "search-console",
         "ga4",

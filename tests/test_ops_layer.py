@@ -123,7 +123,7 @@ def test_credits_and_license_keep_upstream_attribution():
 
 
 def test_basic_edition_ships_no_premium_layer():
-    for skill in ["seo-ops-client", "seo-ops-site-audit", "seo-ops-backlog", "seo-ops-dashboard"]:
+    for skill in ["seo-ops-client", "seo-ops-site-audit", "seo-ops-backlog"]:
         assert not (REPO_ROOT / "skills" / skill).exists(), skill
-    for script in ["ops_client.py", "ops_export.py"]:
+    for script in ["ops_client.py"]:
         assert not (SCRIPTS / script).exists(), script

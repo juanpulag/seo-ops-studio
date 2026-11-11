@@ -6,7 +6,7 @@ argument-hint: "[status | google | dataforseo | bing | moz | notion]"
 license: MIT
 metadata:
   author: SEO Ops Studio
-  version: "0.2.0"
+  version: "0.3.0"
   category: seo-ops
 ---
 
@@ -51,7 +51,7 @@ Ask which one they want to start with; do not force them all at once.
 
 ## Step 4 · Per-API guides
 
-- **Google:** walk through `docs/guides/02-service-account.md` with the user: Google Cloud project → enable APIs (Search Console, Analytics Data, Analytics Admin, Tag Manager, Chrome UX Report, PageSpeed Insights, Sheets, Drive) → create the service account → download the JSON key to a private folder → **they** write the path in `service_account_path` → create the API key → **they** write it in `api_key`. Remind them that in large companies creating a service account may need IT approval.
+- **Google:** walk through `docs/guides/02-service-account.md` with the user: Google Cloud project → enable APIs (Search Console, Analytics Data, Analytics Admin, Tag Manager, Chrome UX Report, PageSpeed Insights) → create the service account → download the JSON key to a private folder → **they** write the path in `service_account_path` → create the API key → **they** write it in `api_key`. Remind them that in large companies creating a service account may need IT approval.
 - **DataForSEO:** the user runs `bash "${CLAUDE_PLUGIN_ROOT}/extensions/dataforseo/install.sh"` in their terminal. It asks for the API username and password (not the web login) and registers the connector. They must then restart Claude.
 - **Bing / Moz:** the user pastes the keys into `backlinks-api.json`.
 - **Notion:** check whether you have Notion tools available. If not, explain how to add the Notion connector in the Claude app.

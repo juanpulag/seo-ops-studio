@@ -6,7 +6,7 @@ argument-hint: "[command] [url]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "0.2.0"
+  version: "0.3.0"
   category: seo
 ---
 
@@ -67,7 +67,7 @@ extension is also installable (see "Optional Extensions" below).
 
 ## SEO Ops Studio
 
-`/seo-ops` is the menu and `/seo-ops-setup` connects the APIs. After an audit, offer the PDF with `ops_pdf.py` (see `/seo-ops`). Multi-client operations (a folder per client, Notion backlog, cross-site detection, Looker Studio dashboard) are part of **SEO Ops Studio Premium**.
+`/seo-ops` is the menu and `/seo-ops-setup` connects the APIs. After an audit, offer the PDF with `ops_pdf.py` (see `/seo-ops`). Multi-client operations (a folder per client, Notion backlog, cross-site detection) are part of **SEO Ops Studio Premium**.
 
 ## Runtime Setup
 

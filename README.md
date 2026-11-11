@@ -69,7 +69,6 @@ For consultants and agencies managing **multiple clients and many sites**. Adds 
 | Report with findings | Each finding becomes a task in a **Notion backlog**, with evidence, acceptance criteria and how to validate, without duplicates |
 | Not included | Detection of **platform** issues that repeat across sites (one task, not thirty) |
 | Not included | One folder, one memory and one Notion **per client** |
-| Not included | **Looker Studio** dashboard (native GSC and GA4 + audit data) |
 | Not included | Calculated priority (impact × severity × scope ÷ effort) and a panel of open tasks by country and severity |
 
 Interested? Open an [issue](https://github.com/juanpulag/seo-ops-studio/issues) titled "Premium".

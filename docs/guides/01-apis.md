@@ -15,9 +15,6 @@ All of these come from **one Google Cloud project with a service account** (guid
 | Tag Manager API (read) | Audit GTM containers: tags, triggers, Consent Mode | Service account with read access on each container |
 | Chrome UX Report (CrUX) API | Real Core Web Vitals (LCP, INP, CLS) | API key |
 | PageSpeed Insights API | Lighthouse without the public limit (429 errors) | API key (same as CrUX) |
-| Google Sheets API + Drive API | Write to Sheets the data Looker Studio has no native connector for | Service account |
-
-**Looker Studio needs no API**: it connects natively to Search Console, GA4 and Sheets.
 
 **Do not use the Google Indexing API for normal pages.** Google only supports it for job postings and livestreams.
 
@@ -34,7 +31,7 @@ All of these come from **one Google Cloud project with a service account** (guid
 | API | What it is for | Note |
 |---|---|---|
 | **DataForSEO** | Real rankings by country and language, volumes, competitors, backlinks, Lighthouse at scale, LLM mentions | Pay as you go. Recommended: an account with a **business email** (higher limits, priority support, no phone verification). API credentials are not the web login |
-| Semrush API | Bring Semrush data into Claude and Looker Studio | Usually requires the Business plan plus separate API units. If you only use Semrush through its interface, you do not need it |
+| Semrush API | Bring Semrush data into Claude | Usually requires the Business plan plus separate API units. If you only use Semrush through its interface, you do not need it |
 
 ## 4. Optional
 
@@ -42,7 +39,7 @@ Firecrawl (JavaScript crawling), Ahrefs or SE Ranking (alternatives to DataForSE
 
 ## The minimum to get started
 
-1. A Google Cloud project with: Search Console, Analytics Data, Analytics Admin, Tag Manager, CrUX, PageSpeed, Sheets and Drive.
+1. A Google Cloud project with: Search Console, Analytics Data, Analytics Admin, Tag Manager, CrUX and PageSpeed.
 2. A service account (its JSON file) and an API key for CrUX and PageSpeed.
 3. DataForSEO.
 4. Bing Webmaster Tools.

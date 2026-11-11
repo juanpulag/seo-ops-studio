@@ -8,7 +8,7 @@ authors:
   - name: SEO Ops Studio
 repository-code: 'https://github.com/juanpulag/seo-ops-studio'
 license: MIT
-version: 0.2.0
+version: 0.3.0
 date-released: '2026-11-06'
 keywords:
   - seo
@@ -16,7 +16,6 @@ keywords:
   - agencia-seo
   - backlog
   - notion
-  - looker-studio
 references:
   - type: software
     title: Claude SEO

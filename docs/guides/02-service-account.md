@@ -19,8 +19,6 @@ In **APIs & Services → Library**, search for and click **Enable** on each:
 - Tag Manager API
 - Chrome UX Report API
 - PageSpeed Insights API
-- Google Sheets API
-- Google Drive API
 
 ## 3. Create the service account
 

@@ -2,6 +2,11 @@
 
 All notable changes to SEO Ops Studio are recorded here. Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/).
 
+## [0.3.0] - 2026-11-11
+
+### Removed
+- Removed Looker Studio from the Premium edition's feature list, and the Google Sheets and Drive APIs from the setup guides.
+
 ## [0.2.0] - 2026-11-11
 
 ### Changed

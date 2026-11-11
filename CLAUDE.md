@@ -18,7 +18,7 @@ as an optional extension for self-hosted analytics.
 
 SEO Ops Studio is a standalone product derived from claude-seo v2.5.0 (MIT, Daniel Agrici; see `CREDITS.md`). The audit engine (`skills/seo-ops-analyze`, the `seo-ops-<name>` skills, `agents/`, `scripts/`, `extensions/`) comes from upstream. The product layer is ours, in English (Claude responds in the user's language on request):
 
-- `skills/seo-ops` (menu, onboarding detection, single-site audit + PDF) and `skills/seo-ops-setup` (API onboarding). The multi-client layer (client folders, Notion backlog, cross-site detection, Looker Studio) lives in the private SEO Ops Studio Premium repo.
+- `skills/seo-ops` (menu, onboarding detection, single-site audit + PDF) and `skills/seo-ops-setup` (API onboarding). The multi-client layer (client folders, Notion backlog, cross-site detection) lives in the private SEO Ops Studio Premium repo.
 - `scripts/ops_setup.py` (credential templates and status, never prints secrets) and `scripts/ops_pdf.py` (HTML→PDF with real data sources, no WeasyPrint dependency). Both are in `ALLOWED_CORE_SCRIPTS`.
 - `templates/credentials/`: empty credential templates.
 - `docs/guides/`: user-facing guides (APIs, service account).
@@ -36,7 +36,7 @@ seo-ops-studio/
   CONTRIBUTORS.md                    # Community credits (Pro Hub Challenge)
   AGENTS.md                          # Multi-platform agent instructions (Cursor, Antigravity)
   .claude-plugin/
-    plugin.json                    # Plugin manifest (v0.2.0)
+    plugin.json                    # Plugin manifest (v0.3.0)
     marketplace.json               # Marketplace catalog for distribution
   skills/                            # 28 sub-skills (auto-discovered; includes the 2 SEO Ops skills)
     seo/                           # Main orchestrator skill
