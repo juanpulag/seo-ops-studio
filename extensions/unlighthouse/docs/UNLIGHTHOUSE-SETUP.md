@@ -22,7 +22,7 @@ No API keys, no settings.json mutation.
 ## Verify
 
 ```
-/seo-ops-analisis unlighthouse https://example.com --max-routes 5
+/seo-ops-analyze unlighthouse https://example.com --max-routes 5
 ```
 
 ## When to use Unlighthouse vs. PageSpeed Insights

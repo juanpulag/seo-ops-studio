@@ -8,7 +8,7 @@ Write-Host "====================================" -ForegroundColor Cyan
 Write-Host ""
 
 $SkillDir = "$env:USERPROFILE\.claude\skills\seo-ops-firecrawl"
-$SeoSkillDir = "$env:USERPROFILE\.claude\skills\seo-ops-analisis"
+$SeoSkillDir = "$env:USERPROFILE\.claude\skills\seo-ops-analyze"
 # MCP servers live in ~/.claude.json (the file `claude mcp add` writes).
 # NOT ~/.claude/settings.json - `mcpServers` is not a key Claude Code reads
 # there, so entries written to settings.json silently never load.
@@ -103,6 +103,6 @@ Write-Host ""
 Write-Host "v Firecrawl extension installed!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Usage:"
-Write-Host "  /seo-ops-analisis firecrawl crawl https://example.com"
-Write-Host "  /seo-ops-analisis firecrawl map https://example.com"
-Write-Host "  /seo-ops-analisis firecrawl scrape https://example.com/page"
+Write-Host "  /seo-ops-analyze firecrawl crawl https://example.com"
+Write-Host "  /seo-ops-analyze firecrawl map https://example.com"
+Write-Host "  /seo-ops-analyze firecrawl scrape https://example.com/page"

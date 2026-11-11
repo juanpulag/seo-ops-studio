@@ -6,7 +6,7 @@ review** as a form of scaled content abuse (§4.6.5). This is also the
 **enforceable webmaster-facing spam policy** (updated 2026-05-15), which
 names "automated transformations like synonymizing, **translating**, or
 other obfuscation techniques" as scaled content abuse:
-https://developers.google.com/search/docs/essentials/spam-policies
+https://developers.google.com/search/docs/guidessentials/spam-policies
 
 > "Using automated tools (generative AI or otherwise) as a low-effort
 > way to produce many pages that add little-to-no value."

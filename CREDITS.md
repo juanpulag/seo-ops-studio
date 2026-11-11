@@ -1,22 +1,22 @@
-# Créditos y atribuciones
+# Credits and attributions
 
-SEO Ops Studio es un producto derivado. Estas son las obras en las que se basa y sus licencias.
+SEO Ops Studio is a derivative product. These are the works it is based on and their licenses.
 
-## claude-seo — base del motor de auditoría
+## claude-seo: basis of the audit engine
 
-- **Autor:** Daniel Agrici (AgriciDaniel)
-- **Repositorio:** https://github.com/AgriciDaniel/claude-seo
-- **Versión de partida:** v2.5.0 (22 de octubre de 2026)
-- **Licencia:** MIT. El aviso de copyright original se conserva en `LICENSE`.
+- **Author:** Daniel Agrici (AgriciDaniel)
+- **Repository:** https://github.com/AgriciDaniel/claude-seo
+- **Starting version:** v2.5.0 (October 22, 2026)
+- **License:** MIT. The original copyright notice is kept in `LICENSE`.
 
-El orquestador `seo-ops-analisis` (originalmente `seo`), las habilidades de análisis `seo-ops-technical`, `seo-ops-schema`, etc. (originalmente `seo-technical`, `seo-schema`…), los agentes de `agents/`, los scripts de `scripts/` y las extensiones de `extensions/` provienen de claude-seo, con cambios de nombre y ajustes. Sus archivos conservan el autor original en sus metadatos.
+The `seo-ops-analyze` orchestrator (originally `seo`), the analysis skills `seo-ops-technical`, `seo-ops-schema`, etc. (originally `seo-technical`, `seo-schema`…), the agents in `agents/`, the scripts in `scripts/` and the extensions in `extensions/` come from claude-seo, with renames and adjustments. Their files keep the original author in their metadata.
 
 ## FLOW framework
 
-- **Autor:** Daniel Agrici
-- **Repositorio:** https://github.com/AgriciDaniel/flow
-- **Licencia:** CC BY 4.0. Se usa en la habilidad `seo-flow`, que muestra la atribución cuando se usa.
+- **Author:** Daniel Agrici
+- **Repository:** https://github.com/AgriciDaniel/flow
+- **License:** CC BY 4.0. Used in the `seo-ops-flow` skill, which shows the attribution when used.
 
-## Lo que aporta SEO Ops Studio
+## What SEO Ops Studio adds
 
-Las habilidades `seo-ops` y `seo-ops-configurar`, los scripts `scripts/ops_setup.py` y `scripts/ops_pdf.py`, las plantillas de `templates/` y la documentación de `docs/es/`: onboarding de APIs y auditoría con PDF.
+The `seo-ops` and `seo-ops-setup` skills, the `scripts/ops_setup.py` and `scripts/ops_pdf.py` scripts, the `templates/` and the guides in `docs/guides/`: API onboarding and audits with PDF.

@@ -54,19 +54,19 @@ You are a Maps Intelligence specialist. When delegated tasks during an SEO audit
 ## Reference Files
 
 Load on-demand:
-- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/maps-api-endpoints.md`: DataForSEO endpoint details and costs
-- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/maps-free-apis.md`: Overpass, Geoapify, Nominatim query templates
-- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/maps-geo-grid.md`: Grid algorithm, SoLV calculation, heatmap rendering
-- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/maps-gbp-checklist.md`: 25-field GBP audit checklist with industry weights
-- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/local-seo-signals.md`: Ranking factors, review benchmarks (shared with seo-ops-local)
-- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/local-schema-types.md`: LocalBusiness subtypes by industry (shared with seo-ops-local)
-- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/local-schema-multilocation.md`: Multi-location schema pattern (shared with seo-ops-local)
+- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/maps-api-endpoints.md`: DataForSEO endpoint details and costs
+- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/maps-free-apis.md`: Overpass, Geoapify, Nominatim query templates
+- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/maps-geo-grid.md`: Grid algorithm, SoLV calculation, heatmap rendering
+- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/maps-gbp-checklist.md`: 25-field GBP audit checklist with industry weights
+- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/local-seo-signals.md`: Ranking factors, review benchmarks (shared with seo-ops-local)
+- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/local-schema-types.md`: LocalBusiness subtypes by industry (shared with seo-ops-local)
+- `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/local-schema-multilocation.md`: Multi-location schema pattern (shared with seo-ops-local)
 
 ## Cross-Skill Delegation
 
-- Do NOT duplicate seo-ops-local on-page analysis. Recommend `/seo-ops-analisis local <url>` for website-level checks.
-- Do NOT duplicate seo-ops-geo AI visibility analysis. Recommend `/seo-ops-analisis geo <url>` for full GEO audit.
-- Do NOT duplicate seo-ops-schema validation. Recommend `/seo-ops-analisis schema <url>` for schema fixes.
+- Do NOT duplicate seo-ops-local on-page analysis. Recommend `/seo-ops-analyze local <url>` for website-level checks.
+- Do NOT duplicate seo-ops-geo AI visibility analysis. Recommend `/seo-ops-analyze geo <url>` for full GEO audit.
+- Do NOT duplicate seo-ops-schema validation. Recommend `/seo-ops-analyze schema <url>` for schema fixes.
 
 ## Output Format
 

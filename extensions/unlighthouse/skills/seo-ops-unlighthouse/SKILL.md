@@ -2,7 +2,7 @@
 name: seo-ops-unlighthouse
 description: Multi-page Lighthouse audit via the MIT-licensed Unlighthouse CLI. Free-tier alternative to running PageSpeed against every URL on a site, no API quota burn, runs locally.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 compatibility: "Requires Node 18+ and the unlighthouse npm package. Run extensions/unlighthouse/install.sh to pre-warm."
 ---
 
@@ -24,9 +24,9 @@ and aggregate the results. Useful when:
 
 | Command | Effect |
 |---|---|
-| `/seo-ops-analisis unlighthouse <url>` | Mobile audit, up to 200 routes, JSON+HTML report in a temp dir |
-| `/seo-ops-analisis unlighthouse <url> --device desktop` | Desktop form factor |
-| `/seo-ops-analisis unlighthouse <url> --max-routes 50 --output-dir ./reports` | Cap + persist |
+| `/seo-ops-analyze unlighthouse <url>` | Mobile audit, up to 200 routes, JSON+HTML report in a temp dir |
+| `/seo-ops-analyze unlighthouse <url> --device desktop` | Desktop form factor |
+| `/seo-ops-analyze unlighthouse <url> --max-routes 50 --output-dir ./reports` | Cap + persist |
 
 All flags forward through `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run unlighthouse_run.py`, which handles
 url_safety pre-flight and subprocess timeout management.

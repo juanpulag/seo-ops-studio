@@ -2,7 +2,7 @@
 name: seo-ops-bing
 description: Bing Webmaster Tools + IndexNow extension. Microsoft Copilot citations are fed by the Bing index; this skill makes Bing visibility, link data, and IndexNow URL submission first-class.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 compatibility: "Requires BING_WEBMASTER_API_KEY and (optionally) INDEXNOW_KEY in ~/.claude/settings.json env. Run extensions/bing-webmaster/install.sh to configure."
 ---
 
@@ -24,11 +24,11 @@ specifically for **Amazon/Bing/Naver/Seznam.cz/Yandex/Yep indexing** and
 
 | Command | Underlying script |
 |---|---|
-| `/seo-ops-analisis bing links <url>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run bing_webmaster.py links <url>` |
-| `/seo-ops-analisis bing compare <urlA> <urlB>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run bing_webmaster.py compare <urlA> <urlB>`; both properties must be registered to the API account |
-| `/seo-ops-analisis bing submit <url>` (single URL) | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run indexnow_submit.py --host ... --urls <url>` |
-| `/seo-ops-analisis bing submit-batch <file>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run indexnow_submit.py --host ... --urls-file <file>` |
-| `/seo-ops-analisis bing verify-indexnow` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run indexnow_submit.py --host ... --verify-only` |
+| `/seo-ops-analyze bing links <url>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run bing_webmaster.py links <url>` |
+| `/seo-ops-analyze bing compare <urlA> <urlB>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run bing_webmaster.py compare <urlA> <urlB>`; both properties must be registered to the API account |
+| `/seo-ops-analyze bing submit <url>` (single URL) | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run indexnow_submit.py --host ... --urls <url>` |
+| `/seo-ops-analyze bing submit-batch <file>` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run indexnow_submit.py --host ... --urls-file <file>` |
+| `/seo-ops-analyze bing verify-indexnow` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run indexnow_submit.py --host ... --verify-only` |
 
 ## When this skill applies
 

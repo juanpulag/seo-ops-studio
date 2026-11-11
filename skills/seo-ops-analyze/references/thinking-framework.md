@@ -136,12 +136,12 @@ two recommendations cannot be done in either order, say so.
 
 ## How to invoke the framework
 
-Every full-site audit (`/seo-ops-analisis audit`) and deep-page audit (`/seo-ops-analisis page`)
+Every full-site audit (`/seo-ops-analyze audit`) and deep-page audit (`/seo-ops-analyze page`)
 walks through PERCEIVE → ANALYZE → VALIDATE → ACT before emitting the
 action plan. The Critical / High / Medium / Low priority bucketing
 happens **after** the validation phase, not instead of it.
 
-Single-purpose commands (`/seo-ops-analisis schema`, `/seo-ops-analisis images`, `/seo-ops-analisis technical`,
+Single-purpose commands (`/seo-ops-analyze schema`, `/seo-ops-analyze images`, `/seo-ops-analyze technical`,
 etc.) can skip the full loop when the user is asking a narrow question, but
 their recommendations should still pass at least THINK + ACCEPT before being
 emitted (does this rest on a sound first principle, and is the falsifiability

@@ -40,7 +40,7 @@ If the installer fails, add this to `~/.claude.json` manually:
 Start Claude Code and try:
 
 ```
-/seo-ops-analisis firecrawl map https://example.com
+/seo-ops-analyze firecrawl map https://example.com
 ```
 
 You should see a list of discovered URLs. If you get a "tool not available" error, restart Claude Code to reload MCP servers.

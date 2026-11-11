@@ -10,7 +10,7 @@ argument-hint: "[url]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -36,7 +36,7 @@ merged into core during the March 2024 update).
 
 ## E-E-A-T Framework (updated Sept 2025 QRG)
 
-Read `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/eeat-framework.md` for full criteria and `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/eeat-scoring-guide.md` for score bands.
+Read `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/eeat-framework.md` for full criteria and `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/eeat-scoring-guide.md` for score bands.
 
 ### Experience (first-hand signals)
 - Original research, case studies, before/after results
@@ -246,7 +246,7 @@ If DataForSEO MCP tools are available, use `kw_data_google_ads_search_volume` fo
 
 ## FLOW Framework Integration
 
-For prompt-guided content optimization, use `/seo-ops-analisis flow optimize <url>` and `/seo-ops-analisis flow win <url>`: FLOW's optimize and win prompts provide structured E-E-A-T improvement and BOFU conversion workflows.
+For prompt-guided content optimization, use `/seo-ops-analyze flow optimize <url>` and `/seo-ops-analyze flow win <url>`: FLOW's optimize and win prompts provide structured E-E-A-T improvement and BOFU conversion workflows.
 
 ## Security
 

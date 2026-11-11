@@ -25,7 +25,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 LAUNCHER = ROOT / "scripts" / "seo-ops"
 CANONICAL = '"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops"'
-MANUAL = '"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops"'
+MANUAL = '"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops"'
 
 # A bare invocation is ``seo-ops run`` with nothing in front of it. The
 # repository-relative form ``./scripts/seo-ops run`` and the canonical form
@@ -94,7 +94,7 @@ def test_instruction_files_use_the_canonical_plugin_root_form() -> None:
         if CANONICAL in (ROOT / rel).read_text(encoding="utf-8")
     ]
     assert len(carriers) > 30, "the canonical launcher form should be used repo-wide"
-    assert "skills/seo-ops-analisis/SKILL.md" in carriers
+    assert "skills/seo-ops-analyze/SKILL.md" in carriers
     assert "agents/seo-ops-technical.md" in carriers
 
 

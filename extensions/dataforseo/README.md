@@ -38,54 +38,54 @@ The installer will:
 
 | Command | Description |
 |---------|-------------|
-| `/seo-ops-analisis dataforseo serp <keyword>` | Google organic SERP results (also supports Bing/Yahoo via `se` parameter) |
-| `/seo-ops-analisis dataforseo serp-images <keyword>` | Image elements from the organic SERP (the pinned MCP server has no Google Images tool) |
-| `/seo-ops-analisis dataforseo serp-youtube <keyword>` | YouTube search results |
-| `/seo-ops-analisis dataforseo youtube <video_id>` | YouTube video deep analysis (info, comments, subtitles) |
+| `/seo-ops-analyze dataforseo serp <keyword>` | Google organic SERP results (also supports Bing/Yahoo via `se` parameter) |
+| `/seo-ops-analyze dataforseo serp-images <keyword>` | Image elements from the organic SERP (the pinned MCP server has no Google Images tool) |
+| `/seo-ops-analyze dataforseo serp-youtube <keyword>` | YouTube search results |
+| `/seo-ops-analyze dataforseo youtube <video_id>` | YouTube video deep analysis (info, comments, subtitles) |
 
 ### Keyword Research
 
 | Command | Description |
 |---------|-------------|
-| `/seo-ops-analisis dataforseo keywords <seed>` | Keyword ideas, suggestions, and related terms |
-| `/seo-ops-analisis dataforseo volume <keywords>` | Search volume for keyword list |
-| `/seo-ops-analisis dataforseo difficulty <keywords>` | Keyword difficulty scores |
-| `/seo-ops-analisis dataforseo intent <keywords>` | Search intent classification |
-| `/seo-ops-analisis dataforseo trends <keyword>` | Google Trends data over time |
+| `/seo-ops-analyze dataforseo keywords <seed>` | Keyword ideas, suggestions, and related terms |
+| `/seo-ops-analyze dataforseo volume <keywords>` | Search volume for keyword list |
+| `/seo-ops-analyze dataforseo difficulty <keywords>` | Keyword difficulty scores |
+| `/seo-ops-analyze dataforseo intent <keywords>` | Search intent classification |
+| `/seo-ops-analyze dataforseo trends <keyword>` | Google Trends data over time |
 
 ### Domain & Competitor Analysis
 
 | Command | Description |
 |---------|-------------|
-| `/seo-ops-analisis dataforseo backlinks <domain>` | Full backlink profile with spam scores |
-| `/seo-ops-analisis dataforseo competitors <domain>` | Competing domains and traffic estimates |
-| `/seo-ops-analisis dataforseo ranked <domain>` | Keywords a domain ranks for |
-| `/seo-ops-analisis dataforseo intersection <domains>` | Keyword/backlink overlap (2-20 domains) |
-| `/seo-ops-analisis dataforseo traffic <domains>` | Bulk traffic estimation |
-| `/seo-ops-analisis dataforseo subdomains <domain>` | Subdomains with ranking data |
-| `/seo-ops-analisis dataforseo top-searches <domain>` | Top queries mentioning domain |
+| `/seo-ops-analyze dataforseo backlinks <domain>` | Full backlink profile with spam scores |
+| `/seo-ops-analyze dataforseo competitors <domain>` | Competing domains and traffic estimates |
+| `/seo-ops-analyze dataforseo ranked <domain>` | Keywords a domain ranks for |
+| `/seo-ops-analyze dataforseo intersection <domains>` | Keyword/backlink overlap (2-20 domains) |
+| `/seo-ops-analyze dataforseo traffic <domains>` | Bulk traffic estimation |
+| `/seo-ops-analyze dataforseo subdomains <domain>` | Subdomains with ranking data |
+| `/seo-ops-analyze dataforseo top-searches <domain>` | Top queries mentioning domain |
 
 ### Technical / On-Page
 
 | Command | Description |
 |---------|-------------|
-| `/seo-ops-analisis dataforseo onpage <url>` | On-page analysis (Lighthouse + content parsing) |
-| `/seo-ops-analisis dataforseo tech <domain>` | Technology stack detection |
-| `/seo-ops-analisis dataforseo whois <domain>` | WHOIS registration data |
+| `/seo-ops-analyze dataforseo onpage <url>` | On-page analysis (Lighthouse + content parsing) |
+| `/seo-ops-analyze dataforseo tech <domain>` | Technology stack detection |
+| `/seo-ops-analyze dataforseo whois <domain>` | WHOIS registration data |
 
 ### Content & Business Data
 
 | Command | Description |
 |---------|-------------|
-| `/seo-ops-analisis dataforseo content <keyword/url>` | Content analysis, search, and phrase trends |
-| `/seo-ops-analisis dataforseo listings <keyword>` | Business listings search |
+| `/seo-ops-analyze dataforseo content <keyword/url>` | Content analysis, search, and phrase trends |
+| `/seo-ops-analyze dataforseo listings <keyword>` | Business listings search |
 
 ### AI Visibility / GEO
 
 | Command | Description |
 |---------|-------------|
-| `/seo-ops-analisis dataforseo ai-scrape <query>` | ChatGPT web scraper for GEO visibility |
-| `/seo-ops-analisis dataforseo ai-mentions <keyword>` | LLM mention tracking across AI platforms |
+| `/seo-ops-analyze dataforseo ai-scrape <query>` | ChatGPT web scraper for GEO visibility |
+| `/seo-ops-analyze dataforseo ai-mentions <keyword>` | LLM mention tracking across AI platforms |
 
 ## API Modules
 
@@ -123,11 +123,11 @@ The extension includes a custom `field-config.json` that reduces API response si
 
 When installed, other SEO Ops Studio skills automatically detect DataForSEO availability and use live data:
 
-- **`/seo-ops-analisis audit`**: Uses real SERP, backlink, and on-page data
-- **`/seo-ops-analisis technical`**: Uses on-page analysis for real technical data
-- **`/seo-ops-analisis content`**: Uses keyword volume, difficulty, and intent data
-- **`/seo-ops-analisis geo`**: Uses ChatGPT scraper and LLM mentions for GEO signals
-- **`/seo-ops-analisis plan`**: Uses competitor and keyword data for strategy
+- **`/seo-ops-analyze audit`**: Uses real SERP, backlink, and on-page data
+- **`/seo-ops-analyze technical`**: Uses on-page analysis for real technical data
+- **`/seo-ops-analyze content`**: Uses keyword volume, difficulty, and intent data
+- **`/seo-ops-analyze geo`**: Uses ChatGPT scraper and LLM mentions for GEO signals
+- **`/seo-ops-analyze plan`**: Uses competitor and keyword data for strategy
 
 ## Troubleshooting
 

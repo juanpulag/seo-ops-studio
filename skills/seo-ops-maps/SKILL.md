@@ -14,7 +14,7 @@ license: MIT
 compatibility: "DataForSEO MCP for Tier 1+, Google Maps API for Tier 2"
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -25,7 +25,7 @@ how a business appears on Google Maps, Bing Places, Apple Maps, and OpenStreetMa
 
 **Boundary with seo-ops-local:** This skill analyzes the business on maps PLATFORMS
 (via APIs). seo-ops-local analyzes local SEO signals on the WEBSITE (via HTML fetch).
-Do not duplicate seo-ops-local on-page analysis. Recommend `/seo-ops-analisis local <url>` for
+Do not duplicate seo-ops-local on-page analysis. Recommend `/seo-ops-analyze local <url>` for
 website-level checks.
 
 ---
@@ -34,13 +34,13 @@ website-level checks.
 
 | Command | What it does | Tier |
 |---------|-------------|------|
-| `/seo-ops-analisis maps <url>` | Full maps presence audit (auto-selects tier) | 0+ |
-| `/seo-ops-analisis maps grid <keyword> <location>` | Geo-grid rank scan (7x7, 1 keyword default) | 1+ |
-| `/seo-ops-analisis maps reviews <business> <location>` | Cross-platform review intelligence | 1+ |
-| `/seo-ops-analisis maps competitors <keyword> <location>` | Competitor radius mapping | 0+ |
-| `/seo-ops-analisis maps nap <business-name>` | Cross-platform NAP verification | 0+ |
-| `/seo-ops-analisis maps schema <business-name>` | Generate LocalBusiness JSON-LD from data | 0+ |
-| `/seo-ops-analisis maps gbp <business> <location>` | GBP completeness audit | 1+ |
+| `/seo-ops-analyze maps <url>` | Full maps presence audit (auto-selects tier) | 0+ |
+| `/seo-ops-analyze maps grid <keyword> <location>` | Geo-grid rank scan (7x7, 1 keyword default) | 1+ |
+| `/seo-ops-analyze maps reviews <business> <location>` | Cross-platform review intelligence | 1+ |
+| `/seo-ops-analyze maps competitors <keyword> <location>` | Competitor radius mapping | 0+ |
+| `/seo-ops-analyze maps nap <business-name>` | Cross-platform NAP verification | 0+ |
+| `/seo-ops-analyze maps schema <business-name>` | Generate LocalBusiness JSON-LD from data | 0+ |
+| `/seo-ops-analyze maps gbp <business> <location>` | GBP completeness audit | 1+ |
 
 ---
 
@@ -257,10 +257,10 @@ Generate `MAPS-ANALYSIS-{domain}.md` with:
 
 ## Cross-Skill Delegation
 
-- Website on-page local signals: recommend `/seo-ops-analisis local <url>`
-- Full AI search visibility: recommend `/seo-ops-analisis geo <url>`
-- Schema validation and fixes: recommend `/seo-ops-analisis schema <url>`
-- Live SERP and keyword data: recommend `/seo-ops-analisis dataforseo [command]`
+- Website on-page local signals: recommend `/seo-ops-analyze local <url>`
+- Full AI search visibility: recommend `/seo-ops-analyze geo <url>`
+- Schema validation and fixes: recommend `/seo-ops-analyze schema <url>`
+- Live SERP and keyword data: recommend `/seo-ops-analyze dataforseo [command]`
 
 ---
 

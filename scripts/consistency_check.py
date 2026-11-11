@@ -5,14 +5,14 @@ Complements tests/test_manifest_consistency.py (counts and version triangulation
 reference-graph checks that no other tool covers:
 
 1. ``references/X`` mentions in SKILL.md and agent files resolve via the fallback chain
-   own dir -> shared ``skills/seo-ops-analisis/references/`` -> any skill's references dir (cross-skill
+   own dir -> shared ``skills/seo-ops-analyze/references/`` -> any skill's references dir (cross-skill
    resolutions are reported as info, dead ones as errors).
 2. ``research/X.md`` path mentions exist.
 3. ``scripts/X.py`` mentions resolve PATH-AWARE: repo-root ``scripts/`` first, then the
    enclosing extension's ``scripts/`` dir for files under ``extensions/<name>/``. A bare
    basename existing somewhere else in the tree does NOT count (this exact bug hid dead
    ``scripts/presets.py`` invocations before the 2026-07 full review).
-4. Routing tables in ``skills/seo-ops-analisis/SKILL.md`` and ``docs/COMMANDS.md`` agree with each
+4. Routing tables in ``skills/seo-ops-analyze/SKILL.md`` and ``docs/COMMANDS.md`` agree with each
    other and with the skill directories on disk.
 5. ``agents/<name>.md`` path mentions exist in ``agents/`` or in any
    ``extensions/<ext>/agents/`` tree (``seo-newagent`` doc example whitelisted).
@@ -77,7 +77,7 @@ def check_references(files, md):
         base = os.path.dirname(f)
         for m in sorted(set(ref_pat.findall(read(f)))):
             candidates = [os.path.join(base, "references", m),
-                          os.path.join("skills/seo-ops-analisis/references", m)]
+                          os.path.join("skills/seo-ops-analyze/references", m)]
             if any(os.path.exists(os.path.join(REPO, c)) for c in candidates):
                 continue
             hits = (glob.glob(os.path.join(REPO, "skills", "*", "references", m))
@@ -202,22 +202,22 @@ def check_runtime_invocations(texts):
 
 
 def check_routing(files):
-    cmd_pat = re.compile(r'`/seo-ops-analisis(?:\s+([a-z][a-z0-9-]*))?')
+    cmd_pat = re.compile(r'`/seo-ops-analyze(?:\s+([a-z][a-z0-9-]*))?')
     tables = {src: {m for m in cmd_pat.findall(read(src)) if m}
-              for src in ("skills/seo-ops-analisis/SKILL.md", "docs/COMMANDS.md")}
+              for src in ("skills/seo-ops-analyze/SKILL.md", "docs/COMMANDS.md")}
     skill_tokens = {d.split("/")[1][len("seo-ops-"):] for d in files
                     if d.startswith("skills/seo-ops-") and d.endswith("SKILL.md")}
     ext_tokens = {p.split("/")[3][len("seo-ops-"):] for p in files
                   if re.match(r'extensions/[^/]+/skills/seo-ops-[^/]+/SKILL\.md$', p)}
     known = skill_tokens | ext_tokens
-    a, b = tables["skills/seo-ops-analisis/SKILL.md"], tables["docs/COMMANDS.md"]
+    a, b = tables["skills/seo-ops-analyze/SKILL.md"], tables["docs/COMMANDS.md"]
     errors = []
     for c in sorted(a - b):
-        errors.append(f"routing: `/seo-ops-analisis {c}` in orchestrator but not docs/COMMANDS.md")
+        errors.append(f"routing: `/seo-ops-analyze {c}` in orchestrator but not docs/COMMANDS.md")
     for c in sorted(b - a):
-        errors.append(f"routing: `/seo-ops-analisis {c}` in docs/COMMANDS.md but not orchestrator")
+        errors.append(f"routing: `/seo-ops-analyze {c}` in docs/COMMANDS.md but not orchestrator")
     for c in sorted((a | b) - known - RUNTIME_UTILITY_COMMANDS):
-        errors.append(f"routing: `/seo-ops-analisis {c}` has no matching skill directory")
+        errors.append(f"routing: `/seo-ops-analyze {c}` has no matching skill directory")
     return errors
 
 

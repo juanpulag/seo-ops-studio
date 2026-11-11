@@ -15,7 +15,7 @@ Stores `PROFOUND_API_KEY` in `~/.claude/settings.json` env block, mode 0o600.
 ## Verify
 
 ```
-/seo-ops-analisis profound citations "SEO Ops Studio"
+/seo-ops-analyze profound citations "SEO Ops Studio"
 ```
 
 ## Uninstall

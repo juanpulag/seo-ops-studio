@@ -22,7 +22,7 @@ endpoint costs ~5 units per query (1 per platform).
 ## Verify
 
 ```
-/seo-ops-analisis seranking ai-visibility "SEO Ops Studio"
+/seo-ops-analyze seranking ai-visibility "SEO Ops Studio"
 ```
 
 Expected output: percentages per platform (ChatGPT, Gemini, Perplexity,

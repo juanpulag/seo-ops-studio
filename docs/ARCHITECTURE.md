@@ -104,14 +104,14 @@ Reference files contain static data loaded on-demand to avoid bloating the main 
 
 ## Orchestration Flow
 
-### Full Audit (`/seo-ops-analisis audit`)
+### Full Audit (`/seo-ops-analyze audit`)
 
 ```
 User request
     │
     ▼
 ┌──────────────────┐
-│   seo            │  Main orchestrator (skills/seo-ops-analisis/SKILL.md)
+│   seo            │  Main orchestrator (skills/seo-ops-analyze/SKILL.md)
 └────────┬─────────┘
          │  Detects business type and signals
          │  Spawns subagents in parallel
@@ -150,7 +150,7 @@ User request
 ### Individual Command
 
 ```
-User Request (e.g., /seo-ops-analisis page)
+User Request (e.g., /seo-ops-analyze page)
     │
     ▼
 ┌─────────────────┐
@@ -208,7 +208,7 @@ User Request (e.g., /seo-ops-analisis page)
 1. Create `skills/seo-newskill/SKILL.md`
 2. Add YAML frontmatter with name and description
 3. Write skill instructions
-4. Update main `skills/seo-ops-analisis/SKILL.md` to route to new skill
+4. Update main `skills/seo-ops-analyze/SKILL.md` to route to new skill
 
 ### Adding a New Subagent
 
@@ -242,12 +242,12 @@ Skills and agents therefore call the launcher by its plugin-relative path,
 expands in skill body content, in `allowed-tools` Bash rules, and as an
 environment variable for hook processes. The quoting keeps the command correct
 when the plugin root contains spaces. Manual installers (`install.sh`,
-`install.ps1`) copy the launcher to `~/.claude/skills/seo-ops-analisis/scripts/seo-ops`
+`install.ps1`) copy the launcher to `~/.claude/skills/seo-ops-analyze/scripts/seo-ops`
 and rewrite that canonical token to the absolute path in every Markdown file
 they install, because a manual install has no plugin root.
 
 Plugin environments live under persistent `CLAUDE_PLUGIN_DATA`. Manual installs
-keep the compatible `~/.claude/skills/seo-ops-analisis/.venv` location. A state marker records
+keep the compatible `~/.claude/skills/seo-ops-analyze/.venv` location. A state marker records
 the runtime schema, requirements SHA-256, Python major and minor version, public
 plugin version, and browser state. Requirements, runtime-schema, or Python ABI
 changes require explicit setup; a version-only difference remains compatible and

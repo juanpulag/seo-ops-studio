@@ -45,7 +45,7 @@ def test_dispatch_is_allowlisted_and_rejects_traversal(tmp_path: Path) -> None:
 
 
 def test_manual_extension_fallback_stays_inside_installed_skill(tmp_path: Path) -> None:
-    root = tmp_path / "skills" / "seo-ops-analisis"
+    root = tmp_path / "skills" / "seo-ops-analyze"
     scripts = tmp_path / "skills" / "seo-ops-image-gen" / "scripts"
     scripts.mkdir(parents=True)
     (scripts / "generate.py").write_text("print('ok')\n", encoding="utf-8")
@@ -310,7 +310,7 @@ def test_successful_stage_returns_the_completed_process(monkeypatch: pytest.Monk
 
 def test_redaction_covers_repr_quoted_home(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(runtime.Path, "home", classmethod(lambda cls: Path(r"C:\Users\someone")))
-    quoted = repr(r"C:\Users\someone\.claude\skills\seo-ops-analisis\.venv.next-1\Scripts\python.exe")
+    quoted = repr(r"C:\Users\someone\.claude\skills\seo-ops-analyze\.venv.next-1\Scripts\python.exe")
     nested = repr(f"sys.path = [{quoted}]")
     redacted = runtime._redact(
         f"Command '[{quoted}, '-c', {nested}]' returned non-zero exit status 1.\n"

@@ -57,7 +57,7 @@ def test_every_copy_of_the_range_matches_runtime() -> None:
 
 def test_no_launcher_or_workflow_still_accepts_three_ten() -> None:
     for relative in ("scripts/seo-ops", "install.ps1", ".github/workflows/ci.yml",
-                     ".github/workflows/v2.yml", ".github/workflows/windows-smoke.yml"):
+                     ".github/workflows/windows-smoke.yml"):
         text = _read(relative)
         assert "(3, 10)" not in text, relative
         assert "'3.10'" not in text and '"3.10"' not in text, relative

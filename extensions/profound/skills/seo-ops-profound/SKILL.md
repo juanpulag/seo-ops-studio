@@ -2,7 +2,7 @@
 name: seo-ops-profound
 description: Profound LLM citation tracker (extension). Time-series brand citation rates across ChatGPT, Perplexity, and other LLMs. Pairs with seo-ops-seranking for triangulated AI visibility coverage.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 compatibility: "Requires a Profound API key (set PROFOUND_API_KEY by running extensions/profound/install.sh)."
 ---
 
@@ -23,10 +23,10 @@ are first-class.
 
 | Command | Purpose |
 |---|---|
-| `/seo-ops-analisis profound citations <brand>` | Current citation rate per LLM + 30-day trend |
-| `/seo-ops-analisis profound prompts <brand>` | Top prompts that surface (or fail to surface) the brand |
-| `/seo-ops-analisis profound competitors <brand>` | Brands cited alongside `brand` for the same prompts |
-| `/seo-ops-analisis profound alerts <brand>` | Spike/drop alerts vs. 7-day baseline |
+| `/seo-ops-analyze profound citations <brand>` | Current citation rate per LLM + 30-day trend |
+| `/seo-ops-analyze profound prompts <brand>` | Top prompts that surface (or fail to surface) the brand |
+| `/seo-ops-analyze profound competitors <brand>` | Brands cited alongside `brand` for the same prompts |
+| `/seo-ops-analyze profound alerts <brand>` | Spike/drop alerts vs. 7-day baseline |
 
 ## Output conventions
 

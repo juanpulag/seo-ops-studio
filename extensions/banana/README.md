@@ -9,7 +9,7 @@ banana Creative Director pipeline.
 > This extension wraps [Claude Banana](https://github.com/AgriciDaniel/banana-claude)
 > for SEO-specific use cases. Install the standalone skill for general-purpose image generation.
 
-- **SEO Ops Studio** installed (`~/.claude/skills/seo-ops-analisis/`)
+- **SEO Ops Studio** installed (`~/.claude/skills/seo-ops-analyze/`)
 - **Node.js 20+** with npx
 - **Google AI API key** (free at [aistudio.google.com/apikey](https://aistudio.google.com/apikey))
 - **ImageMagick** (optional, for post-processing)
@@ -30,12 +30,12 @@ The installer will:
 
 | Command | What it does |
 |---------|-------------|
-| `/seo-ops-analisis image-gen og <description>` | OG/social preview image (1200x630 feel) |
-| `/seo-ops-analisis image-gen hero <description>` | Blog hero image (widescreen, dramatic) |
-| `/seo-ops-analisis image-gen product <description>` | Product photography (clean, white BG) |
-| `/seo-ops-analisis image-gen infographic <description>` | Infographic visual (vertical, data-heavy) |
-| `/seo-ops-analisis image-gen custom <description>` | Custom with full Creative Director pipeline |
-| `/seo-ops-analisis image-gen batch <description> [N]` | Generate N variations (default: 3) |
+| `/seo-ops-analyze image-gen og <description>` | OG/social preview image (1200x630 feel) |
+| `/seo-ops-analyze image-gen hero <description>` | Blog hero image (widescreen, dramatic) |
+| `/seo-ops-analyze image-gen product <description>` | Product photography (clean, white BG) |
+| `/seo-ops-analyze image-gen infographic <description>` | Infographic visual (vertical, data-heavy) |
+| `/seo-ops-analyze image-gen custom <description>` | Custom with full Creative Director pipeline |
+| `/seo-ops-analyze image-gen batch <description> [N]` | Generate N variations (default: 3) |
 
 CSV batch planning helper:
 ```bash
@@ -77,7 +77,7 @@ After every generation, Claude provides:
 
 ## Audit Integration
 
-During `/seo-ops-analisis audit`, the extension optionally spawns an image analysis agent that:
+During `/seo-ops-analyze audit`, the extension optionally spawns an image analysis agent that:
 - Audits existing OG/social images across the site
 - Identifies missing or low-quality images
 - Creates a prioritized generation plan with prompt suggestions

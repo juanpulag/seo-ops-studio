@@ -10,7 +10,7 @@ license: MIT
 metadata:
   author: AgriciDaniel
   original_author: "Florian Schmitz (Pro Hub Challenge)"
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -31,10 +31,10 @@ well-optimized it is.
 
 | Command | Purpose |
 |---------|---------|
-| `/seo-ops-analisis sxo <url>` | Full SXO analysis (auto-detect keyword from page) |
-| `/seo-ops-analisis sxo <url> <keyword>` | Full SXO analysis for a specific keyword |
-| `/seo-ops-analisis sxo wireframe <url>` | Generate IST/SOLL wireframe with concrete placeholders |
-| `/seo-ops-analisis sxo personas <url>` | Persona-only scoring (skip SERP analysis) |
+| `/seo-ops-analyze sxo <url>` | Full SXO analysis (auto-detect keyword from page) |
+| `/seo-ops-analyze sxo <url> <keyword>` | Full SXO analysis for a specific keyword |
+| `/seo-ops-analyze sxo wireframe <url>` | Generate IST/SOLL wireframe with concrete placeholders |
+| `/seo-ops-analyze sxo personas <url>` | Persona-only scoring (skip SERP analysis) |
 
 ## Execution Pipeline
 
@@ -148,7 +148,7 @@ Read `references/persona-scoring.md` for methodology.
 
 ### Step 7: Wireframe Generation (Optional)
 
-Only execute when `/seo-ops-analisis sxo wireframe` is invoked.
+Only execute when `/seo-ops-analyze sxo wireframe` is invoked.
 
 Read `references/wireframe-templates.md` for templates.
 
@@ -184,12 +184,12 @@ The SXO score is **separate** from the main SEO Health Score.
 
 | Finding | Hand Off To |
 |---------|-------------|
-| E-E-A-T gaps in persona scoring | `/seo-ops-analisis content` for deep E-E-A-T audit |
-| Missing schema types | `/seo-ops-analisis schema` for generation |
-| Local intent detected in SERP | `/seo-ops-analisis local` for GBP analysis |
-| Content depth gaps | `/seo-ops-analisis page` for deep page analysis |
-| Technical issues found during fetch | `/seo-ops-analisis technical` for full audit |
-| Image/media gaps | `/seo-ops-analisis images` for optimization |
+| E-E-A-T gaps in persona scoring | `/seo-ops-analyze content` for deep E-E-A-T audit |
+| Missing schema types | `/seo-ops-analyze schema` for generation |
+| Local intent detected in SERP | `/seo-ops-analyze local` for GBP analysis |
+| Content depth gaps | `/seo-ops-analyze page` for deep page analysis |
+| Technical issues found during fetch | `/seo-ops-analyze technical` for full audit |
+| Image/media gaps | `/seo-ops-analyze images` for optimization |
 
 ## Output Format
 

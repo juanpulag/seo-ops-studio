@@ -18,7 +18,7 @@ main() {
     echo "════════════════════════════════════════"
 
     command -v python3 >/dev/null 2>&1 || { echo "✗ Python 3 required."; exit 1; }
-    [ ! -d "${SKILL_DIR}/seo-ops-analisis" ] && { echo "✗ seo-ops-studio base not installed."; exit 1; }
+    [ ! -d "${SKILL_DIR}/seo-ops-analyze" ] && { echo "✗ seo-ops-studio base not installed."; exit 1; }
 
     SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" >/dev/null 2>&1 && pwd)"
 
@@ -57,7 +57,7 @@ PY
     echo
     echo "Done. Verify your IndexNow key is published (manual install path shown;"
     echo "plugin installs use \"\${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops\" instead):"
-    echo "  \"\$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops\" run indexnow_submit.py --host example.com \\"
+    echo "  \"\$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops\" run indexnow_submit.py --host example.com \\"
     echo "    --key \$INDEXNOW_KEY --key-location \$INDEXNOW_KEY_LOCATION --verify-only"
 }
 main "$@"

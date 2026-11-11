@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 # seo-ops-studio manual-install uninstaller (Windows)
 #
-# Removes the orchestrator skill (~/.claude/skills/seo-ops-analisis), all sub-skills
+# Removes the orchestrator skill (~/.claude/skills/seo-ops-analyze), all sub-skills
 # (~/.claude/skills/seo-*), and all sub-agents (~/.claude/agents/seo-*.md).
 #
 # Uses glob enumeration rather than a hardcoded list so future skill
@@ -29,7 +29,7 @@ function Main {
     $removedAgents = 0
 
     # Remove orchestrator if present
-    $orchestratorPath = Join-Path $SkillDir "seo-ops-analisis"
+    $orchestratorPath = Join-Path $SkillDir "seo-ops-analyze"
     if (Test-Path $orchestratorPath -PathType Container) {
         Remove-Item -Recurse -Force $orchestratorPath
         Write-Color Green "  Removed: $orchestratorPath"

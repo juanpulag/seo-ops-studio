@@ -2,7 +2,7 @@
 name: seo-ops-seranking
 description: SE Ranking AI visibility analyst (extension). Tracks AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, and AI Mode in a single query.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 compatibility: "Requires an SE Ranking API key (set SERANKING_API_KEY by running extensions/seranking/install.sh)."
 ---
 
@@ -20,10 +20,10 @@ Live AI visibility tracking via the SE Ranking REST API.
 
 | Command | Purpose |
 |---|---|
-| `/seo-ops-analisis seranking ai-visibility <brand>` | Share-of-voice for `brand` across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode |
-| `/seo-ops-analisis seranking serp <keyword>` | Top 100 organic positions + SERP features |
-| `/seo-ops-analisis seranking backlinks <url>` | Backlink profile (alternative vendor source to Ahrefs / DataForSEO) |
-| `/seo-ops-analisis seranking competitors <url>` | Top 10 organic competitors and shared-keyword gaps |
+| `/seo-ops-analyze seranking ai-visibility <brand>` | Share-of-voice for `brand` across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode |
+| `/seo-ops-analyze seranking serp <keyword>` | Top 100 organic positions + SERP features |
+| `/seo-ops-analyze seranking backlinks <url>` | Backlink profile (alternative vendor source to Ahrefs / DataForSEO) |
+| `/seo-ops-analyze seranking competitors <url>` | Top 10 organic competitors and shared-keyword gaps |
 
 ## AI Share-of-Voice scoring
 

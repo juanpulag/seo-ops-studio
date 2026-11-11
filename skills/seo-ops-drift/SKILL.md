@@ -12,7 +12,7 @@ license: MIT
 metadata:
   author: AgriciDaniel
   original_author: "Dan Colta (Pro Hub Challenge)"
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -26,9 +26,9 @@ Git for your SEO. Capture baselines, detect regressions, track changes over time
 
 | Command | Purpose |
 |---------|---------|
-| `/seo-ops-analisis drift baseline <url>` | Capture current SEO state as a "known good" snapshot |
-| `/seo-ops-analisis drift compare <url>` | Compare current page state to stored baseline |
-| `/seo-ops-analisis drift history <url>` | Show change history and past comparisons |
+| `/seo-ops-analyze drift baseline <url>` | Capture current SEO state as a "known good" snapshot |
+| `/seo-ops-analyze drift compare <url>` | Compare current page state to stored baseline |
+| `/seo-ops-analyze drift history <url>` | Show change history and past comparisons |
 
 ---
 
@@ -160,14 +160,14 @@ When drift is detected, recommend the appropriate specialized skill:
 
 | Finding | Recommendation |
 |---------|----------------|
-| Schema removed or modified | Run `/seo-ops-analisis schema <url>` for full validation |
-| CWV regression | Run `/seo-ops-analisis technical <url>` for performance audit |
-| Title or meta description changed | Run `/seo-ops-analisis page <url>` for content analysis |
-| Canonical changed or removed | Run `/seo-ops-analisis technical <url>` for indexability check |
-| Noindex added | Run `/seo-ops-analisis technical <url>` for crawlability audit |
-| H1/heading structure changed | Run `/seo-ops-analisis content <url>` for E-E-A-T review |
-| OG tags removed | Run `/seo-ops-analisis page <url>` for social sharing analysis |
-| Status code changed to error | Run `/seo-ops-analisis technical <url>` for full diagnostics |
+| Schema removed or modified | Run `/seo-ops-analyze schema <url>` for full validation |
+| CWV regression | Run `/seo-ops-analyze technical <url>` for performance audit |
+| Title or meta description changed | Run `/seo-ops-analyze page <url>` for content analysis |
+| Canonical changed or removed | Run `/seo-ops-analyze technical <url>` for indexability check |
+| Noindex added | Run `/seo-ops-analyze technical <url>` for crawlability audit |
+| H1/heading structure changed | Run `/seo-ops-analyze content <url>` for E-E-A-T review |
+| OG tags removed | Run `/seo-ops-analyze page <url>` for social sharing analysis |
+| Status code changed to error | Run `/seo-ops-analyze technical <url>` for full diagnostics |
 
 ---
 
@@ -204,21 +204,21 @@ When drift is detected, recommend the appropriate specialized skill:
 
 ### Pre/Post Deployment Check
 ```
-/seo-ops-analisis drift baseline https://example.com     # Before deploy
+/seo-ops-analyze drift baseline https://example.com     # Before deploy
 # ... deploy happens ...
-/seo-ops-analisis drift compare https://example.com      # After deploy
+/seo-ops-analyze drift compare https://example.com      # After deploy
 ```
 
 ### Ongoing Monitoring
 ```
-/seo-ops-analisis drift baseline https://example.com     # Initial capture
+/seo-ops-analyze drift baseline https://example.com     # Initial capture
 # ... weeks later ...
-/seo-ops-analisis drift compare https://example.com      # Check for drift
-/seo-ops-analisis drift history https://example.com      # Review all changes
+/seo-ops-analyze drift compare https://example.com      # Check for drift
+/seo-ops-analyze drift history https://example.com      # Review all changes
 ```
 
 ### Investigating a Traffic Drop
 ```
-/seo-ops-analisis drift compare https://example.com      # What changed?
-/seo-ops-analisis drift history https://example.com      # When did it change?
+/seo-ops-analyze drift compare https://example.com      # What changed?
+/seo-ops-analyze drift history https://example.com      # When did it change?
 ```

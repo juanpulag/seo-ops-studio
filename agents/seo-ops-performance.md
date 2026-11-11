@@ -65,7 +65,7 @@ Google evaluates the **75th percentile** of page visits, 75% of visits must meet
 
 **CrUX Vis** replaced the CrUX Dashboard (Looker Studio), which was shut down at end of November 2025 (October 2025 was its final dataset). Use [CrUX Vis](https://cruxvis.withgoogle.com) or the CrUX API directly.
 
-**LCP image subparts** (TTFB, resource load delay, resource load duration, element render delay) are in the CrUX API since the January 2025 release (published February 11, 2025). See `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analisis/references/cwv-thresholds.md` for details.
+**LCP image subparts** (TTFB, resource load delay, resource load duration, element render delay) are in the CrUX API since the January 2025 release (published February 11, 2025). See `${CLAUDE_PLUGIN_ROOT}/skills/seo-ops-analyze/references/cwv-thresholds.md` for details.
 
 ## Tools
 

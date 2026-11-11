@@ -62,41 +62,41 @@ integration + 2 extension mirrors), and 62 Python execution scripts.
 
 | Command | What it does |
 |---------|-------------|
-| `/seo-ops-analisis audit <url>` | Full website audit with parallel subagent delegation |
-| `/seo-ops-analisis page <url>` | Deep single-page analysis |
-| `/seo-ops-analisis technical <url>` | Technical SEO audit (9 categories) |
-| `/seo-ops-analisis content <url>` | E-E-A-T and content quality analysis |
-| `/seo-ops-analisis content-brief <topic>` | Generate a content brief for a topic |
-| `/seo-ops-analisis schema <url>` | Schema.org detection, validation, generation |
-| `/seo-ops-analisis sitemap <url>` | XML sitemap analysis or generation |
-| `/seo-ops-analisis images <url>` | Image SEO: on-page audit, SERP analysis, file optimization |
-| `/seo-ops-analisis geo <url>` | AI Overviews / Generative Engine Optimization |
-| `/seo-ops-analisis plan <type>` | Strategic SEO planning |
-| `/seo-ops-analisis cluster <keyword>` | SERP-based semantic clustering and content architecture |
-| `/seo-ops-analisis sxo <url>` | Search Experience Optimization: page-type analysis, personas |
-| `/seo-ops-analisis drift baseline <url>` | Capture SEO baseline for change monitoring |
-| `/seo-ops-analisis drift compare <url>` | Compare current state to stored baseline |
-| `/seo-ops-analisis drift history <url>` | Show drift history over time |
-| `/seo-ops-analisis ecommerce <url>` | E-commerce SEO: product schema, marketplace intelligence |
-| `/seo-ops-analisis programmatic [url]` | Programmatic SEO at scale |
-| `/seo-ops-analisis competitor-pages [url]` | Competitor comparison pages |
-| `/seo-ops-analisis flow [stage]` | FLOW framework prompts (Find, Leverage, Optimize, Win, Local; prompts/sync utilities.) |
-| `/seo-ops-analisis local <url>` | Local SEO analysis (GBP, citations, reviews) |
-| `/seo-ops-analisis maps [cmd] [args]` | Maps intelligence (geo-grid, GBP audit, competitors) |
-| `/seo-ops-analisis hreflang <url>` | Hreflang/i18n SEO audit, cultural profiles, content parity |
-| `/seo-ops-analisis google [cmd] [url]` | Google SEO APIs (GSC, PageSpeed, CrUX, Indexing, GA4) |
-| `/seo-ops-analisis backlinks <url>` | Backlink profile analysis |
-| `/seo-ops-analisis backlinks setup` | Setup free backlink APIs |
-| `/seo-ops-analisis backlinks verify <url>` | Verify known backlinks still exist |
-| `/seo-ops-analisis dataforseo [cmd]` | Live SEO data via DataForSEO (extension) |
-| `/seo-ops-analisis image-gen [use-case]` | AI image generation for SEO assets (extension) |
-| `/seo-ops-analisis firecrawl [cmd] <url>` | Full-site crawling and site mapping (extension) |
-| `/seo-ops-analisis ahrefs [cmd] <target>` | Ahrefs backlink and keyword data (extension) |
-| `/seo-ops-analisis bing [cmd] <url>` | Bing Webmaster data and IndexNow (extension) |
-| `/seo-ops-analisis profound [cmd]` | LLM brand-citation tracking (extension) |
-| `/seo-ops-analisis seranking [cmd]` | AI share-of-voice tracking (extension) |
-| `/seo-ops-analisis matomo [cmd] [args]` | Matomo Reporting API: GA4 alternative or supplement (extension) |
-| `/seo-ops-analisis unlighthouse <url>` | Multi-page Lighthouse audits (extension) |
+| `/seo-ops-analyze audit <url>` | Full website audit with parallel subagent delegation |
+| `/seo-ops-analyze page <url>` | Deep single-page analysis |
+| `/seo-ops-analyze technical <url>` | Technical SEO audit (9 categories) |
+| `/seo-ops-analyze content <url>` | E-E-A-T and content quality analysis |
+| `/seo-ops-analyze content-brief <topic>` | Generate a content brief for a topic |
+| `/seo-ops-analyze schema <url>` | Schema.org detection, validation, generation |
+| `/seo-ops-analyze sitemap <url>` | XML sitemap analysis or generation |
+| `/seo-ops-analyze images <url>` | Image SEO: on-page audit, SERP analysis, file optimization |
+| `/seo-ops-analyze geo <url>` | AI Overviews / Generative Engine Optimization |
+| `/seo-ops-analyze plan <type>` | Strategic SEO planning |
+| `/seo-ops-analyze cluster <keyword>` | SERP-based semantic clustering and content architecture |
+| `/seo-ops-analyze sxo <url>` | Search Experience Optimization: page-type analysis, personas |
+| `/seo-ops-analyze drift baseline <url>` | Capture SEO baseline for change monitoring |
+| `/seo-ops-analyze drift compare <url>` | Compare current state to stored baseline |
+| `/seo-ops-analyze drift history <url>` | Show drift history over time |
+| `/seo-ops-analyze ecommerce <url>` | E-commerce SEO: product schema, marketplace intelligence |
+| `/seo-ops-analyze programmatic [url]` | Programmatic SEO at scale |
+| `/seo-ops-analyze competitor-pages [url]` | Competitor comparison pages |
+| `/seo-ops-analyze flow [stage]` | FLOW framework prompts (Find, Leverage, Optimize, Win, Local; prompts/sync utilities.) |
+| `/seo-ops-analyze local <url>` | Local SEO analysis (GBP, citations, reviews) |
+| `/seo-ops-analyze maps [cmd] [args]` | Maps intelligence (geo-grid, GBP audit, competitors) |
+| `/seo-ops-analyze hreflang <url>` | Hreflang/i18n SEO audit, cultural profiles, content parity |
+| `/seo-ops-analyze google [cmd] [url]` | Google SEO APIs (GSC, PageSpeed, CrUX, Indexing, GA4) |
+| `/seo-ops-analyze backlinks <url>` | Backlink profile analysis |
+| `/seo-ops-analyze backlinks setup` | Setup free backlink APIs |
+| `/seo-ops-analyze backlinks verify <url>` | Verify known backlinks still exist |
+| `/seo-ops-analyze dataforseo [cmd]` | Live SEO data via DataForSEO (extension) |
+| `/seo-ops-analyze image-gen [use-case]` | AI image generation for SEO assets (extension) |
+| `/seo-ops-analyze firecrawl [cmd] <url>` | Full-site crawling and site mapping (extension) |
+| `/seo-ops-analyze ahrefs [cmd] <target>` | Ahrefs backlink and keyword data (extension) |
+| `/seo-ops-analyze bing [cmd] <url>` | Bing Webmaster data and IndexNow (extension) |
+| `/seo-ops-analyze profound [cmd]` | LLM brand-citation tracking (extension) |
+| `/seo-ops-analyze seranking [cmd]` | AI share-of-voice tracking (extension) |
+| `/seo-ops-analyze matomo [cmd] [args]` | Matomo Reporting API: GA4 alternative or supplement (extension) |
+| `/seo-ops-analyze unlighthouse <url>` | Multi-page Lighthouse audits (extension) |
 
 ## Using with Cursor / Cursor Cloud
 

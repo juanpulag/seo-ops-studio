@@ -49,10 +49,10 @@ IP ranges.
 ## Cross-Skill Delegation
 
 When drift is detected, recommend the appropriate skill:
-- Schema issues: `/seo-ops-analisis schema <url>`
-- Performance regression: `/seo-ops-analisis technical <url>` or `/seo-ops-analisis google psi <url>`
-- Content/title changes: `/seo-ops-analisis page <url>` or `/seo-ops-analisis content <url>`
-- Canonical/indexability: `/seo-ops-analisis technical <url>`
+- Schema issues: `/seo-ops-analyze schema <url>`
+- Performance regression: `/seo-ops-analyze technical <url>` or `/seo-ops-analyze google psi <url>`
+- Content/title changes: `/seo-ops-analyze page <url>` or `/seo-ops-analyze content <url>`
+- Canonical/indexability: `/seo-ops-analyze technical <url>`
 
 ## Output
 

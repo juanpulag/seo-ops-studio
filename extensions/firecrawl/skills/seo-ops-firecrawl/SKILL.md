@@ -11,7 +11,7 @@ license: MIT
 compatibility: "Requires Firecrawl MCP server"
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -31,10 +31,10 @@ installed and provide install instructions.
 
 | Command | Purpose |
 |---------|---------|
-| `/seo-ops-analisis firecrawl crawl <url>` | Full-site crawl with content extraction |
-| `/seo-ops-analisis firecrawl map <url>` | Discover site structure (URLs only, fast) |
-| `/seo-ops-analisis firecrawl scrape <url>` | Single-page scrape with JS rendering |
-| `/seo-ops-analisis firecrawl search <query> <url>` | Search within a crawled site |
+| `/seo-ops-analyze firecrawl crawl <url>` | Full-site crawl with content extraction |
+| `/seo-ops-analyze firecrawl map <url>` | Discover site structure (URLs only, fast) |
+| `/seo-ops-analyze firecrawl scrape <url>` | Single-page scrape with JS rendering |
+| `/seo-ops-analyze firecrawl search <query> <url>` | Search within a crawled site |
 
 ## Commands
 
@@ -60,7 +60,7 @@ metadata, and links for all discovered pages.
 4. **Content inventory**: Extract all page titles, meta descriptions, H1s at scale
 5. **SPA/JS-rendered sites**: Firecrawl renders JavaScript, solving the Issue #11 problem
 
-**Example orchestration for `/seo-ops-analisis audit`:**
+**Example orchestration for `/seo-ops-analyze audit`:**
 ```
 1. firecrawl_map(url) -> get all URLs (fast, no content)
 2. Filter to top 50 most important pages (homepage, key sections)
@@ -158,7 +158,7 @@ related to a topic without crawling everything.
 ## Cross-Skill Integration
 
 ### With seo-ops-audit (full audit)
-When Firecrawl is available during `/seo-ops-analisis audit`:
+When Firecrawl is available during `/seo-ops-analyze audit`:
 1. Use `firecrawl_map` to discover all site URLs
 2. Compare with XML sitemap (seo-ops-sitemap) to find orphan/missing pages
 3. Select top pages for deep analysis

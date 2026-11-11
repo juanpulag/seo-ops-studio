@@ -1,7 +1,7 @@
 {
   "name": "seo-ops-studio",
-  "version": "0.1.0",
-  "description": "SEO Ops Studio: operación SEO multi-cliente para consultores y agencias. 28 sub-skills (24 core, 1 orchestrator, 1 framework, 2 extension) y 19 sub-agents: onboarding guiado de APIs, un proyecto por cliente, auditorías con PDF, hallazgos convertidos en tareas de Notion sin duplicados, problemas transversales entre sitios y tableros en Looker Studio. Basado en claude-seo (MIT).",
+  "version": "0.2.0",
+  "description": "SEO Ops Studio: full SEO audits with real data and PDF reports from Claude Code. 28 sub-skills (24 core, 1 orchestrator, 1 framework, 2 extension) and 19 sub-agents: guided API onboarding, parallel specialists, weighted Health Score and technical, content, schema, GEO, hreflang, local and e-commerce analyses. Based on claude-seo (MIT).",
   "author": {
     "name": "SEO Ops Studio",
     "url": "https://github.com/juanpulag/seo-ops-studio"
@@ -11,13 +11,13 @@
   "repository": "https://github.com/juanpulag/seo-ops-studio",
   "keywords": [
     "seo",
-    "agencia-seo",
-    "consultor-seo",
-    "multi-cliente",
+    "seo-agency",
+    "seo-consultant",
+    "multi-client",
     "backlog",
     "notion",
     "looker-studio",
-    "auditoria-seo",
+    "seo-audit",
     "search-console",
     "ga4",
     "dataforseo",

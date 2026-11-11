@@ -70,17 +70,17 @@ Score the target page across 7 dimensions (100 points total):
 
 ## Cross-Skill References
 
-- E-E-A-T gaps detected? Recommend `/seo-ops-analisis content` for deep analysis
-- Missing schema types? Recommend `/seo-ops-analisis schema` for generation
-- Local intent in SERP? Recommend `/seo-ops-analisis local` for GBP analysis
-- Thin content? Recommend `/seo-ops-analisis page` for page-level audit
+- E-E-A-T gaps detected? Recommend `/seo-ops-analyze content` for deep analysis
+- Missing schema types? Recommend `/seo-ops-analyze schema` for generation
+- Local intent in SERP? Recommend `/seo-ops-analyze local` for GBP analysis
+- Thin content? Recommend `/seo-ops-analyze page` for page-level audit
 
 ## Output Rules
 
 - SXO score is SEPARATE from SEO Health Score -- always label it "SXO Gap Score"
 - Lead with mismatch finding if one exists (this is the key insight)
 - Include limitations section (what could not be assessed)
-- Offer: "Generate a PDF report? Use `/seo-ops-analisis google report`"
+- Offer: "Generate a PDF report? Use `/seo-ops-analyze google report`"
 
 ## Pre-Delivery Checklist
 

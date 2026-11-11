@@ -2,7 +2,7 @@
 name: seo-ops-matomo
 description: Matomo Reporting API extension. Self-hosted or Matomo Cloud analytics as a GA4 alternative or complement. Organic traffic, landing pages, device / country breakdowns, referrers, search keywords. Triggers on "Matomo", "self-hosted analytics", "analytics ohne Google", "GA4 alternative", "Matomo Reporting", "Piwik".
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 compatibility: "Requires a Matomo instance URL and API token in ~/.config/seo-ops-studio/matomo.json (0600), or MATOMO_URL / MATOMO_API_TOKEN / MATOMO_SITE_ID in the environment. Run extensions/matomo/install.sh to configure."
 ---
 
@@ -24,13 +24,13 @@ against Matomo Cloud and self-hosted instances.
 
 | Command | Underlying script |
 |---|---|
-| `/seo-ops-analisis matomo check` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_auth.py --check` |
-| `/seo-ops-analisis matomo organic [site-id]` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py organic --site-id <id>` |
-| `/seo-ops-analisis matomo top-pages` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py top-pages` |
-| `/seo-ops-analisis matomo device` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py device` |
-| `/seo-ops-analisis matomo country` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py country` |
-| `/seo-ops-analisis matomo referrers` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py referrers` |
-| `/seo-ops-analisis matomo keywords` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py keywords` |
+| `/seo-ops-analyze matomo check` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_auth.py --check` |
+| `/seo-ops-analyze matomo organic [site-id]` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py organic --site-id <id>` |
+| `/seo-ops-analyze matomo top-pages` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py top-pages` |
+| `/seo-ops-analyze matomo device` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py device` |
+| `/seo-ops-analyze matomo country` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py country` |
+| `/seo-ops-analyze matomo referrers` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py referrers` |
+| `/seo-ops-analyze matomo keywords` | `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py keywords` |
 
 All commands accept `--days` (default 28), `--limit`, `--site-id`, and
 `--json`. The site ID falls back to `MATOMO_SITE_ID` from settings.
@@ -54,7 +54,7 @@ All commands accept `--days` (default 28), `--limit`, `--site-id`, and
   performance metrics.
 - For AI Overview / GEO citability work, route to `seo-ops-geo`. Matomo
   offers no LLM-specific signals.
-- During `/seo-ops-analisis audit`, the orchestrator spawns the `seo-ops-matomo` agent
+- During `/seo-ops-analyze audit`, the orchestrator spawns the `seo-ops-matomo` agent
   (analogous to `seo-ops-google`) whenever `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_auth.py
   --check` succeeds. Both agents can be active simultaneously when the
   user has both GA4 and Matomo configured.

@@ -18,7 +18,7 @@ main() {
     echo "════════════════════════════════════════"
 
     command -v python3 >/dev/null 2>&1 || { echo "✗ Python 3 required."; exit 1; }
-    [ ! -d "${SKILL_DIR}/seo-ops-analisis" ] && { echo "✗ seo-ops-studio base not installed."; exit 1; }
+    [ ! -d "${SKILL_DIR}/seo-ops-analyze" ] && { echo "✗ seo-ops-studio base not installed."; exit 1; }
 
     SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" >/dev/null 2>&1 && pwd)"
     REPO_ROOT="$(cd "${SOURCE_DIR}/../.." >/dev/null 2>&1 && pwd)"

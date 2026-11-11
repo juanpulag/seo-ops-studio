@@ -68,7 +68,7 @@ Replace the username, password, and FIELD_CONFIG_PATH with your actual values.
 After installing, start Claude Code and run:
 
 ```
-/seo-ops-analisis dataforseo serp test query
+/seo-ops-analyze dataforseo serp test query
 ```
 
 If you see search results, the extension is working correctly.

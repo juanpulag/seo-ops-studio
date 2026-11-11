@@ -19,7 +19,7 @@ main() {
 
     command -v python3 >/dev/null 2>&1 || { echo "✗ Python 3 required."; exit 1; }
 
-    if [ ! -d "${SKILL_DIR}/seo-ops-analisis" ]; then
+    if [ ! -d "${SKILL_DIR}/seo-ops-analyze" ]; then
         echo "✗ seo-ops-studio base plugin not installed."
         exit 1
     fi
@@ -52,7 +52,7 @@ print(f"✓ Wrote env.SERANKING_API_KEY to {path}")
 PY
 
     echo
-    echo "Done. Try: /seo-ops-analisis seranking ai-visibility brandname"
+    echo "Done. Try: /seo-ops-analyze seranking ai-visibility brandname"
     echo "Full docs: extensions/seranking/docs/SERANKING-SETUP.md"
 }
 

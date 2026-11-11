@@ -13,7 +13,7 @@ argument-hint: "[audit|fix|lighthouse|refresh] [url]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -33,10 +33,10 @@ only ChatGPT desktop calls tools by default).
 
 | Command | What it does |
 |---|---|
-| `/seo-ops-analisis agentic <url>` | Full agent-readiness audit (default mode) |
-| `/seo-ops-analisis agentic lighthouse <url or file.json>` | Explain the Lighthouse Agentic Browsing X/N result |
-| `/seo-ops-analisis agentic fix <url>` | Draft fixes: robots.txt Content-Signal, llms.txt, ai-catalog.json, WebMCP |
-| `/seo-ops-analisis agentic refresh` | Re-verify the dated facts in `references/vendor-matrix.md` |
+| `/seo-ops-analyze agentic <url>` | Full agent-readiness audit (default mode) |
+| `/seo-ops-analyze agentic lighthouse <url or file.json>` | Explain the Lighthouse Agentic Browsing X/N result |
+| `/seo-ops-analyze agentic fix <url>` | Draft fixes: robots.txt Content-Signal, llms.txt, ai-catalog.json, WebMCP |
+| `/seo-ops-analyze agentic refresh` | Re-verify the dated facts in `references/vendor-matrix.md` |
 
 ## Audit process
 
@@ -145,7 +145,7 @@ Drafts go to stdout for review; nothing is deployed and no file is overwritten.
 - State the Lighthouse version and test date with every fraction; WebMCP
   audits depend on the testing browser.
 - For any vendor fact, use `references/vendor-matrix.md` and keep its source
-  grade. If a row is older than 60 days, say so or run `/seo-ops-analisis agentic refresh`.
+  grade. If a row is older than 60 days, say so or run `/seo-ops-analyze agentic refresh`.
 
 ## Refresh mode
 
@@ -183,8 +183,8 @@ version changes, and the `CHECKED_ON` constant in `agentic_check.py` together.
 
 | Scenario | Action |
 |---|---|
-| PSI quota exceeded or no key | Say so, suggest configuring a Google API key (`/seo-ops-analisis google setup`), and continue with steps 2 and 3. Offer a local run: `npx lighthouse@latest <url> --only-categories=agentic-browsing --output=json`, then `--from-json`. |
-| Agent-UX `score_status: unavailable` (no Chromium) | Report the heuristic as unavailable and rely on Lighthouse `agent-accessibility-tree` for the tree. Use `html_findings` (when `html_only_fallback` is true) only if `server-rendered` passed; on a client-rendered page they describe the empty app shell. Suggest `/seo-ops-analisis setup` for Chromium. |
+| PSI quota exceeded or no key | Say so, suggest configuring a Google API key (`/seo-ops-analyze google setup`), and continue with steps 2 and 3. Offer a local run: `npx lighthouse@latest <url> --only-categories=agentic-browsing --output=json`, then `--from-json`. |
+| Agent-UX `score_status: unavailable` (no Chromium) | Report the heuristic as unavailable and rely on Lighthouse `agent-accessibility-tree` for the tree. Use `html_findings` (when `html_only_fallback` is true) only if `server-rendered` passed; on a client-rendered page they describe the empty app shell. Suggest `/seo-ops-analyze setup` for Chromium. |
 | Static WebMCP count differs from Lighthouse | `registerTool_call_sites` counts call sites, not tools. Report the Lighthouse `webmcp-registered-tools` list as the tool count. |
 | No agentic-browsing category in a saved report | The report predates Lighthouse 13.2; rerun with a current version. |
 | WebMCP audits N/A | The testing browser lacked WebMCP support, or the page registers nothing. Not a defect. |

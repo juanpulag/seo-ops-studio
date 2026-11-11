@@ -13,7 +13,7 @@ license: MIT
 compatibility: "Requires DataForSEO MCP server"
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -61,9 +61,9 @@ DataForSEO charges per API call. Be efficient:
 ```
 
 **User commands for cost management:**
-- `/seo-ops-analisis dataforseo costs today` → show today's spending breakdown
-- `/seo-ops-analisis dataforseo costs summary` → show 7-day spending history
-- `/seo-ops-analisis dataforseo costs config --mode threshold --threshold 0.50` → configure approval mode
+- `/seo-ops-analyze dataforseo costs today` → show today's spending breakdown
+- `/seo-ops-analyze dataforseo costs summary` → show 7-day spending history
+- `/seo-ops-analyze dataforseo costs config --mode threshold --threshold 0.50` → configure approval mode
 
 Load `references/cost-tiers.md` for the full pricing table, budget presets, and cost reduction tips.
 
@@ -71,35 +71,35 @@ Load `references/cost-tiers.md` for the full pricing table, budget presets, and 
 
 | Command | What it does |
 |---------|-------------|
-| `/seo-ops-analisis dataforseo serp <keyword>` | Google organic SERP results |
-| `/seo-ops-analisis dataforseo serp-images <keyword>` | Image elements from the organic SERP (the pinned MCP server has no Google Images tool) |
-| `/seo-ops-analisis dataforseo serp-youtube <keyword>` | YouTube search results |
-| `/seo-ops-analisis dataforseo youtube <video_id>` | YouTube video deep analysis |
-| `/seo-ops-analisis dataforseo keywords <seed>` | Keyword ideas and suggestions |
-| `/seo-ops-analisis dataforseo volume <keywords>` | Search volume for keywords |
-| `/seo-ops-analisis dataforseo difficulty <keywords>` | Keyword difficulty scores |
-| `/seo-ops-analisis dataforseo intent <keywords>` | Search intent classification |
-| `/seo-ops-analisis dataforseo trends <keyword>` | Google Trends data |
-| `/seo-ops-analisis dataforseo backlinks <domain>` | Full backlink profile |
-| `/seo-ops-analisis dataforseo competitors <domain>` | Competitor domain analysis |
-| `/seo-ops-analisis dataforseo ranked <domain>` | Ranked keywords for domain |
-| `/seo-ops-analisis dataforseo intersection <domains>` | Keyword/backlink overlap |
-| `/seo-ops-analisis dataforseo traffic <domains>` | Bulk traffic estimation |
-| `/seo-ops-analisis dataforseo subdomains <domain>` | Subdomains with ranking data |
-| `/seo-ops-analisis dataforseo top-searches <domain>` | Top queries mentioning domain |
-| `/seo-ops-analisis dataforseo onpage <url>` | On-page analysis (Lighthouse + parsing) |
-| `/seo-ops-analisis dataforseo tech <domain>` | Technology stack detection |
-| `/seo-ops-analisis dataforseo whois <domain>` | WHOIS registration data |
-| `/seo-ops-analisis dataforseo content <keyword/url>` | Content analysis and trends |
-| `/seo-ops-analisis dataforseo listings <keyword>` | Business listings search |
-| `/seo-ops-analisis dataforseo ai-scrape <query>` | ChatGPT web scraper for GEO |
-| `/seo-ops-analisis dataforseo ai-mentions <keyword>` | LLM mention tracking for GEO |
+| `/seo-ops-analyze dataforseo serp <keyword>` | Google organic SERP results |
+| `/seo-ops-analyze dataforseo serp-images <keyword>` | Image elements from the organic SERP (the pinned MCP server has no Google Images tool) |
+| `/seo-ops-analyze dataforseo serp-youtube <keyword>` | YouTube search results |
+| `/seo-ops-analyze dataforseo youtube <video_id>` | YouTube video deep analysis |
+| `/seo-ops-analyze dataforseo keywords <seed>` | Keyword ideas and suggestions |
+| `/seo-ops-analyze dataforseo volume <keywords>` | Search volume for keywords |
+| `/seo-ops-analyze dataforseo difficulty <keywords>` | Keyword difficulty scores |
+| `/seo-ops-analyze dataforseo intent <keywords>` | Search intent classification |
+| `/seo-ops-analyze dataforseo trends <keyword>` | Google Trends data |
+| `/seo-ops-analyze dataforseo backlinks <domain>` | Full backlink profile |
+| `/seo-ops-analyze dataforseo competitors <domain>` | Competitor domain analysis |
+| `/seo-ops-analyze dataforseo ranked <domain>` | Ranked keywords for domain |
+| `/seo-ops-analyze dataforseo intersection <domains>` | Keyword/backlink overlap |
+| `/seo-ops-analyze dataforseo traffic <domains>` | Bulk traffic estimation |
+| `/seo-ops-analyze dataforseo subdomains <domain>` | Subdomains with ranking data |
+| `/seo-ops-analyze dataforseo top-searches <domain>` | Top queries mentioning domain |
+| `/seo-ops-analyze dataforseo onpage <url>` | On-page analysis (Lighthouse + parsing) |
+| `/seo-ops-analyze dataforseo tech <domain>` | Technology stack detection |
+| `/seo-ops-analyze dataforseo whois <domain>` | WHOIS registration data |
+| `/seo-ops-analyze dataforseo content <keyword/url>` | Content analysis and trends |
+| `/seo-ops-analyze dataforseo listings <keyword>` | Business listings search |
+| `/seo-ops-analyze dataforseo ai-scrape <query>` | ChatGPT web scraper for GEO |
+| `/seo-ops-analyze dataforseo ai-mentions <keyword>` | LLM mention tracking for GEO |
 
 ---
 
 ## SERP Analysis
 
-### `/seo-ops-analisis dataforseo serp <keyword>`
+### `/seo-ops-analyze dataforseo serp <keyword>`
 
 Fetch live Google organic search results.
 
@@ -111,7 +111,7 @@ Fetch live Google organic search results.
 
 **Output:** Rank, URL, title, description, domain, featured snippets, AI overview references, People Also Ask.
 
-### `/seo-ops-analisis dataforseo serp-youtube <keyword>`
+### `/seo-ops-analyze dataforseo serp-youtube <keyword>`
 
 Fetch YouTube search results. Valuable for GEO. YouTube mentions correlate most strongly with AI citations.
 
@@ -119,7 +119,7 @@ Fetch YouTube search results. Valuable for GEO. YouTube mentions correlate most 
 
 **Output:** Video title, channel, views, upload date, description, URL.
 
-### `/seo-ops-analisis dataforseo youtube <video_id>`
+### `/seo-ops-analyze dataforseo youtube <video_id>`
 
 Deep analysis of a specific YouTube video: info, comments, and subtitles. Treat YouTube mentions as a useful GEO signal, but AI visibility correlations are methodology-dependent.
 
@@ -129,7 +129,7 @@ Deep analysis of a specific YouTube video: info, comments, and subtitles. Treat 
 
 **Output:** Video metadata (title, channel, views, likes, description), top comments with engagement, subtitle/transcript text.
 
-### `/seo-ops-analisis dataforseo serp-images <keyword>`
+### `/seo-ops-analyze dataforseo serp-images <keyword>`
 
 Report the image elements Google shows in the organic results for a keyword (the
 pinned MCP server has no Google Images tool, so this is not a full Images
@@ -160,7 +160,7 @@ is the closest substitute.
 
 ## Keyword Research
 
-### `/seo-ops-analisis dataforseo keywords <seed>`
+### `/seo-ops-analyze dataforseo keywords <seed>`
 
 Generate keyword ideas, suggestions, and related terms from a seed keyword.
 
@@ -170,7 +170,7 @@ Generate keyword ideas, suggestions, and related terms from a seed keyword.
 
 **Output:** Keyword, search volume, CPC, competition level, keyword difficulty, trend.
 
-### `/seo-ops-analisis dataforseo volume <keywords>`
+### `/seo-ops-analyze dataforseo volume <keywords>`
 
 Get search volume and metrics for a list of keywords.
 
@@ -180,7 +180,7 @@ Get search volume and metrics for a list of keywords.
 
 **Output:** Keyword, monthly search volume, CPC, competition, monthly trend data.
 
-### `/seo-ops-analisis dataforseo difficulty <keywords>`
+### `/seo-ops-analyze dataforseo difficulty <keywords>`
 
 Calculate keyword difficulty scores for ranking competitiveness.
 
@@ -190,7 +190,7 @@ Calculate keyword difficulty scores for ranking competitiveness.
 
 **Output:** Keyword, difficulty score (0-100), interpretation (Easy/Medium/Hard/Very Hard).
 
-### `/seo-ops-analisis dataforseo intent <keywords>`
+### `/seo-ops-analyze dataforseo intent <keywords>`
 
 Classify keywords by user search intent.
 
@@ -200,7 +200,7 @@ Classify keywords by user search intent.
 
 **Output:** Keyword, intent type (informational, navigational, commercial, transactional), confidence score.
 
-### `/seo-ops-analisis dataforseo trends <keyword>`
+### `/seo-ops-analyze dataforseo trends <keyword>`
 
 Analyze keyword trends over time using Google Trends data.
 
@@ -214,7 +214,7 @@ Analyze keyword trends over time using Google Trends data.
 
 ## Domain & Competitor Analysis
 
-### `/seo-ops-analisis dataforseo backlinks <domain>`
+### `/seo-ops-analyze dataforseo backlinks <domain>`
 
 Comprehensive backlink profile analysis.
 
@@ -224,7 +224,7 @@ Comprehensive backlink profile analysis.
 
 **Output:** Total backlinks, referring domains, domain rank, spam score, top anchors, new/lost backlinks over time, dofollow ratio, top referring domains.
 
-### `/seo-ops-analisis dataforseo competitors <domain>`
+### `/seo-ops-analyze dataforseo competitors <domain>`
 
 Identify competing domains and estimate traffic.
 
@@ -232,7 +232,7 @@ Identify competing domains and estimate traffic.
 
 **Output:** Competitor domains, keyword overlap %, estimated traffic, domain rank, common keywords.
 
-### `/seo-ops-analisis dataforseo ranked <domain>`
+### `/seo-ops-analyze dataforseo ranked <domain>`
 
 List keywords a domain ranks for with positions and page data.
 
@@ -242,7 +242,7 @@ List keywords a domain ranks for with positions and page data.
 
 **Output:** Keyword, position, URL, search volume, traffic share, SERP features.
 
-### `/seo-ops-analisis dataforseo intersection <domain1> <domain2> [...]`
+### `/seo-ops-analyze dataforseo intersection <domain1> <domain2> [...]`
 
 Find shared keywords and backlink sources across 2-20 domains.
 
@@ -252,7 +252,7 @@ Find shared keywords and backlink sources across 2-20 domains.
 
 **Output:** Shared keywords with positions per domain, shared backlink sources, unique keywords per domain.
 
-### `/seo-ops-analisis dataforseo traffic <domains>`
+### `/seo-ops-analyze dataforseo traffic <domains>`
 
 Estimate organic search traffic for one or more domains.
 
@@ -262,7 +262,7 @@ Estimate organic search traffic for one or more domains.
 
 **Output:** Domain, estimated organic traffic, estimated traffic cost, top keywords.
 
-### `/seo-ops-analisis dataforseo subdomains <domain>`
+### `/seo-ops-analyze dataforseo subdomains <domain>`
 
 Enumerate subdomains with their ranking data and traffic estimates.
 
@@ -272,7 +272,7 @@ Enumerate subdomains with their ranking data and traffic estimates.
 
 **Output:** Subdomain, ranked keywords count, estimated traffic, organic cost.
 
-### `/seo-ops-analisis dataforseo top-searches <domain>`
+### `/seo-ops-analyze dataforseo top-searches <domain>`
 
 Find the most popular search queries that mention a specific domain in results.
 
@@ -286,7 +286,7 @@ Find the most popular search queries that mention a specific domain in results.
 
 ## Technical / On-Page
 
-### `/seo-ops-analisis dataforseo onpage <url>`
+### `/seo-ops-analyze dataforseo onpage <url>`
 
 Run on-page analysis including Lighthouse audit and content parsing.
 
@@ -299,7 +299,7 @@ Run on-page analysis including Lighthouse audit and content parsing.
 
 **Output:** Pages crawled, status codes, meta tags, titles, content size, load times, Lighthouse scores, broken links, resource analysis.
 
-### `/seo-ops-analisis dataforseo tech <domain>`
+### `/seo-ops-analyze dataforseo tech <domain>`
 
 Detect technologies used on a domain.
 
@@ -307,7 +307,7 @@ Detect technologies used on a domain.
 
 **Output:** Technology name, version, category (CMS, analytics, CDN, framework, etc.).
 
-### `/seo-ops-analisis dataforseo whois <domain>`
+### `/seo-ops-analyze dataforseo whois <domain>`
 
 Retrieve WHOIS registration data.
 
@@ -319,7 +319,7 @@ Retrieve WHOIS registration data.
 
 ## Content & Business Data
 
-### `/seo-ops-analisis dataforseo content <keyword/url>`
+### `/seo-ops-analyze dataforseo content <keyword/url>`
 
 Analyze content quality, search for content by topic, and track phrase trends.
 
@@ -329,7 +329,7 @@ Analyze content quality, search for content by topic, and track phrase trends.
 
 **Output:** Content matches with quality scores, sentiment analysis, readability metrics, phrase trend data over time.
 
-### `/seo-ops-analisis dataforseo listings <keyword>`
+### `/seo-ops-analyze dataforseo listings <keyword>`
 
 Search business listings for local SEO competitive analysis.
 
@@ -343,7 +343,7 @@ Search business listings for local SEO competitive analysis.
 
 ## AI Visibility / GEO
 
-### `/seo-ops-analisis dataforseo ai-scrape <query>`
+### `/seo-ops-analyze dataforseo ai-scrape <query>`
 
 Scrape what ChatGPT web search returns for a query. ChatGPT visibility check: see which sources ChatGPT cites for your target keywords. Check Google AI Overviews and AI Mode with GSC gen-AI reports when available.
 
@@ -353,7 +353,7 @@ Scrape what ChatGPT web search returns for a query. ChatGPT visibility check: se
 
 **Output:** ChatGPT response content, cited sources/URLs, referenced domains.
 
-### `/seo-ops-analisis dataforseo ai-mentions <keyword>`
+### `/seo-ops-analyze dataforseo ai-mentions <keyword>`
 
 Track how LLMs mention brands, domains, and topics. Critical for GEO. Measures actual AI visibility across multiple LLM platforms.
 

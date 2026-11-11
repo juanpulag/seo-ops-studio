@@ -10,7 +10,7 @@ argument-hint: "[url]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -223,7 +223,7 @@ Links declining for local pack but remain **~26% of local organic ranking** (Whi
 
 ## AI Search Impact on Local
 
-**Do not duplicate seo-ops-geo analysis.** Provide local-specific AI context and recommend `/seo-ops-analisis geo <url>` for full analysis.
+**Do not duplicate seo-ops-geo analysis.** Provide local-specific AI context and recommend `/seo-ops-analyze geo <url>` for full analysis.
 
 Key local AI facts:
 - AI Overviews appeared on 68% of local searches on average in Whitespark's 2025 sample (540 service-industry queries, 3 metros); broad keyword panels report far lower rates (seoClarity: ~0.14% of local keywords in March 2025), so coverage depends on the query set
@@ -233,7 +233,7 @@ Key local AI facts:
 - Bing Places is critical: powers ChatGPT, Copilot, Alexa
 - Third-party observed local AI interface changes (mobile US) may show only 1-2 businesses, 32% fewer shown (Sterling Sky)
 
-**Recommendation**: Run `/seo-ops-analisis geo <url>` for comprehensive AI search visibility analysis including citability scoring, llms.txt check, and brand mention audit.
+**Recommendation**: Run `/seo-ops-analyze geo <url>` for comprehensive AI search visibility analysis including citability scoring, llms.txt check, and brand mention audit.
 
 ---
 
@@ -312,7 +312,7 @@ If DataForSEO MCP tools are available, use `business_data_business_listings_sear
 
 ## FLOW Framework Integration
 
-For prompt-guided local optimization, use `/seo-ops-analisis flow local <url>`, FLOW's 11 local-stage prompts cover GBP optimization, meta descriptions, title tags, and structured local audit workflows.
+For prompt-guided local optimization, use `/seo-ops-analyze flow local <url>`, FLOW's 11 local-stage prompts cover GBP optimization, meta descriptions, title tags, and structured local audit workflows.
 
 ## Security
 

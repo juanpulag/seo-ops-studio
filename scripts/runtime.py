@@ -408,7 +408,7 @@ def command_run(args: argparse.Namespace) -> int:
         return 2
     status = _status(root)
     if not status["ready"]:
-        print("SEO Ops Studio runtime is not ready. Run `/seo-ops-analisis setup` and retry.", file=sys.stderr)
+        print("SEO Ops Studio runtime is not ready. Run `/seo-ops-analyze setup` and retry.", file=sys.stderr)
         return 3
     result = subprocess.run(
         [str(status["python_path"]), str(script), *args.script_args],

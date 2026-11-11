@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # seo-ops-studio manual-install uninstaller (Unix / macOS / Linux)
 #
-# Removes the orchestrator skill (~/.claude/skills/seo-ops-analisis), all sub-skills
+# Removes the orchestrator skill (~/.claude/skills/seo-ops-analyze), all sub-skills
 # (~/.claude/skills/seo-*), and all sub-agents (~/.claude/agents/seo-*.md).
 #
 # Uses glob enumeration rather than a hardcoded list so future skill
@@ -26,9 +26,9 @@ main() {
     shopt -s nullglob
 
     # Remove orchestrator if present
-    if [ -d "${SKILL_DIR}/seo-ops-analisis" ]; then
-        rm -rf "${SKILL_DIR}/seo-ops-analisis"
-        echo "  Removed: ${SKILL_DIR}/seo-ops-analisis"
+    if [ -d "${SKILL_DIR}/seo-ops-analyze" ]; then
+        rm -rf "${SKILL_DIR}/seo-ops-analyze"
+        echo "  Removed: ${SKILL_DIR}/seo-ops-analyze"
         removed_skills=$((removed_skills + 1))
     fi
 

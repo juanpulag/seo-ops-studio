@@ -173,5 +173,5 @@ def test_no_live_project_mariner_claims() -> None:
 
 def test_ttfb_guidance_matches_web_dev_threshold() -> None:
     """web.dev: good TTFB is 0.8s or less; no file may call >200ms a TTFB problem."""
-    for rel in ("skills/seo-ops-analisis/references/cwv-thresholds.md", "agents/seo-ops-performance.md"):
+    for rel in ("skills/seo-ops-analyze/references/cwv-thresholds.md", "agents/seo-ops-performance.md"):
         assert "TTFB >200ms" not in (REPO_ROOT / rel).read_text(encoding="utf-8"), rel

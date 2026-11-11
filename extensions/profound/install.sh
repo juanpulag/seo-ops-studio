@@ -15,7 +15,7 @@ main() {
     echo "════════════════════════════════════════"
 
     command -v python3 >/dev/null 2>&1 || { echo "✗ Python 3 required."; exit 1; }
-    [ ! -d "${SKILL_DIR}/seo-ops-analisis" ] && { echo "✗ seo-ops-studio base not installed."; exit 1; }
+    [ ! -d "${SKILL_DIR}/seo-ops-analyze" ] && { echo "✗ seo-ops-studio base not installed."; exit 1; }
 
     SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" >/dev/null 2>&1 && pwd)"
 
@@ -40,6 +40,6 @@ os.chmod(tmp, 0o600); os.replace(tmp, path)
 print(f"✓ Wrote env.PROFOUND_API_KEY to {path}")
 PY
 
-    echo "Done. Try: /seo-ops-analisis profound citations brandname"
+    echo "Done. Try: /seo-ops-analyze profound citations brandname"
 }
 main "$@"

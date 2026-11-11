@@ -4,7 +4,7 @@
 
 ### Skill Not Loading
 
-**Symptom:** `/seo-ops-analisis` command not recognized
+**Symptom:** `/seo-ops-analyze` command not recognized
 
 **Solutions:**
 
@@ -19,12 +19,12 @@ For manual installs:
 
 1. Verify installation:
 ```bash
-ls ~/.claude/skills/seo-ops-analisis/SKILL.md
+ls ~/.claude/skills/seo-ops-analyze/SKILL.md
 ```
 
 2. Check SKILL.md has proper frontmatter:
 ```bash
-head -5 ~/.claude/skills/seo-ops-analisis/SKILL.md
+head -5 ~/.claude/skills/seo-ops-analyze/SKILL.md
 ```
 Should start with `---` followed by YAML.
 
@@ -52,14 +52,14 @@ curl -fsSL https://raw.githubusercontent.com/juanpulag/seo-ops-studio/main/insta
 Dependencies belong in the managed runtime. For a plugin install, run:
 
 ```bash
-/seo-ops-analisis doctor
-/seo-ops-analisis setup
+/seo-ops-analyze doctor
+/seo-ops-analyze setup
 ```
 
 For a manual install, run:
 ```bash
-~/.claude/skills/seo-ops-analisis/scripts/seo-ops doctor
-~/.claude/skills/seo-ops-analisis/scripts/seo-ops setup
+~/.claude/skills/seo-ops-analyze/scripts/seo-ops doctor
+~/.claude/skills/seo-ops-analyze/scripts/seo-ops setup
 ```
 
 Do not install individual packages, use `pip --user`, or create a PATH shim.
@@ -77,13 +77,13 @@ Do not install individual packages, use `pip --user`, or create a PATH shim.
 For manual installs, requirements.txt is copied to the skill directory:
 
 ```bash
-ls ~/.claude/skills/seo-ops-analisis/requirements.txt
+ls ~/.claude/skills/seo-ops-analyze/requirements.txt
 ```
 
 If missing, download it directly:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/juanpulag/seo-ops-studio/main/requirements.txt \
-  -o ~/.claude/skills/seo-ops-analisis/requirements.txt
+  -o ~/.claude/skills/seo-ops-analyze/requirements.txt
 ```
 
 ### Windows Python Detection Issues
@@ -95,7 +95,7 @@ curl -fsSL https://raw.githubusercontent.com/juanpulag/seo-ops-studio/main/requi
 1. Install Python from [python.org](https://python.org) and check "Add to PATH"
 2. Rerun `install.ps1`. It uses `SEO_OPS_PYTHON` when set, otherwise the first of `py -3`, `python3` and `python` that is Python 3.11 to 3.14, otherwise the newest of `py -3.14` down to `py -3.11`
 3. If `py -3` is a newer Python that SEO Ops Studio does not support yet (such as 3.15), install 3.14 alongside it, or set `SEO_OPS_PYTHON` to a supported `python.exe`
-4. Run `/seo-ops-analisis doctor` after installation
+4. Run `/seo-ops-analyze doctor` after installation
 
 ---
 
@@ -106,8 +106,8 @@ curl -fsSL https://raw.githubusercontent.com/juanpulag/seo-ops-studio/main/requi
 **Solution:** rerun managed setup so the browser is installed through the same
 interpreter and persistent browser directory:
 ```bash
-/seo-ops-analisis setup
-/seo-ops-analisis doctor
+/seo-ops-analyze setup
+/seo-ops-analyze doctor
 ```
 
 ---
@@ -118,7 +118,7 @@ interpreter and persistent browser directory:
 
 **Solution:**
 ```bash
-chmod +x ~/.claude/skills/seo-ops-analisis/scripts/*.py
+chmod +x ~/.claude/skills/seo-ops-analyze/scripts/*.py
 ```
 
 ---
@@ -187,7 +187,7 @@ cp /path/to/seo-ops-studio/agents/*.md ~/.claude/agents/
 
 1. Audit crawls up to 500 pages: large sites take time
 2. Subagents run in parallel to speed up analysis
-3. For faster checks, use `/seo-ops-analisis page` on specific URLs
+3. For faster checks, use `/seo-ops-analyze page` on specific URLs
 4. Check if site has slow response times
 
 ---
@@ -206,11 +206,11 @@ To see detailed output, check Claude Code's internal logs or run scripts directl
 
 ```bash
 # Test fetch
-python3 ~/.claude/skills/seo-ops-analisis/scripts/fetch_page.py https://example.com
+python3 ~/.claude/skills/seo-ops-analyze/scripts/fetch_page.py https://example.com
 
 # Test parse
-python3 ~/.claude/skills/seo-ops-analisis/scripts/parse_html.py page.html --json
+python3 ~/.claude/skills/seo-ops-analyze/scripts/parse_html.py page.html --json
 
 # Test screenshot
-python3 ~/.claude/skills/seo-ops-analisis/scripts/capture_screenshot.py https://example.com
+python3 ~/.claude/skills/seo-ops-analyze/scripts/capture_screenshot.py https://example.com
 ```

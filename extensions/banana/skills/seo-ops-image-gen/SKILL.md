@@ -7,7 +7,7 @@ license: MIT
 compatibility: "Requires nanobanana MCP server"
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -23,8 +23,8 @@ This extension is built on [Claude Banana](https://github.com/AgriciDaniel/banan
 the standalone AI image generation skill for Claude Code.
 
 This skill has two components with distinct roles:
-- **SKILL.md** (this file): Handles interactive `/seo-ops-analisis image-gen` commands for generating images
-- **Agent** (`agents/seo-ops-image-gen.md`): Audit-only analyst spawned during `/seo-ops-analisis audit` to assess existing OG/social images and produce a generation plan (never auto-generates)
+- **SKILL.md** (this file): Handles interactive `/seo-ops-analyze image-gen` commands for generating images
+- **Agent** (`agents/seo-ops-image-gen.md`): Audit-only analyst spawned during `/seo-ops-analyze audit` to assess existing OG/social images and produce a generation plan (never auto-generates)
 
 ## Prerequisites
 
@@ -42,12 +42,12 @@ and provide install instructions.
 
 | Command | What it does |
 |---------|-------------|
-| `/seo-ops-analisis image-gen og <description>` | Generate OG/social preview image (1200x630 feel) |
-| `/seo-ops-analisis image-gen hero <description>` | Blog hero image (widescreen, dramatic) |
-| `/seo-ops-analisis image-gen product <description>` | Product photography (clean, white BG) |
-| `/seo-ops-analisis image-gen infographic <description>` | Infographic visual (vertical, data-heavy) |
-| `/seo-ops-analisis image-gen custom <description>` | Custom image with full Creative Director pipeline |
-| `/seo-ops-analisis image-gen batch <description> [N]` | Generate N variations (default: 3) |
+| `/seo-ops-analyze image-gen og <description>` | Generate OG/social preview image (1200x630 feel) |
+| `/seo-ops-analyze image-gen hero <description>` | Blog hero image (widescreen, dramatic) |
+| `/seo-ops-analyze image-gen product <description>` | Product photography (clean, white BG) |
+| `/seo-ops-analyze image-gen infographic <description>` | Infographic visual (vertical, data-heavy) |
+| `/seo-ops-analyze image-gen custom <description>` | Custom image with full Creative Director pipeline |
+| `/seo-ops-analyze image-gen batch <description> [N]` | Generate N variations (default: 3) |
 
 ## SEO Image Use Cases
 
@@ -151,7 +151,7 @@ https://ai.google.dev/gemini-api/docs/pricing, store dated values in
 
 ## Cross-Skill Integration
 
-- **seo-ops-images** (analysis) feeds into **seo-ops-image-gen** (generation): audit results from `/seo-ops-analisis images` identify missing or low-quality images; use those findings to drive `/seo-ops-analisis image-gen` commands
+- **seo-ops-images** (analysis) feeds into **seo-ops-image-gen** (generation): audit results from `/seo-ops-analyze images` identify missing or low-quality images; use those findings to drive `/seo-ops-analyze image-gen` commands
 - **seo-ops-audit** spawns the seo-ops-image-gen **agent** (not this skill) to analyze OG/social images across the site and produce a prioritized generation plan
 - **seo-ops-schema** can consume generated images: after generation, suggest `ImageObject` schema markup pointing to the new assets
 

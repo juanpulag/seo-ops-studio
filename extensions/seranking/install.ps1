@@ -8,7 +8,7 @@ if (-not (Get-Command python -ErrorAction SilentlyContinue)) {
 $SkillDir = Join-Path $HOME ".claude/skills"
 $SettingsJson = Join-Path $HOME ".claude/settings.json"
 
-if (-not (Test-Path (Join-Path $SkillDir "seo-ops-analisis"))) {
+if (-not (Test-Path (Join-Path $SkillDir "seo-ops-analyze"))) {
     throw "seo-ops-studio base plugin not installed."
 }
 
@@ -41,4 +41,4 @@ try {
     # A native command's non-zero exit does not throw, even with Stop.
     if ($LASTEXITCODE -ne 0) { throw "Nothing was saved (python exited $LASTEXITCODE). See the message above." }
 } finally { Remove-Item Env:SEO_OPS_SECRET -ErrorAction SilentlyContinue }
-Write-Host "Done. Try: /seo-ops-analisis seranking ai-visibility brandname"
+Write-Host "Done. Try: /seo-ops-analyze seranking ai-visibility brandname"

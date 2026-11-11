@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 if (-not (Get-Command python -ErrorAction SilentlyContinue)) { throw "Python 3 required" }
 $SkillDir = Join-Path $HOME ".claude/skills"
 $SettingsJson = Join-Path $HOME ".claude/settings.json"
-if (-not (Test-Path (Join-Path $SkillDir "seo-ops-analisis"))) { throw "seo-ops-studio not installed" }
+if (-not (Test-Path (Join-Path $SkillDir "seo-ops-analyze"))) { throw "seo-ops-studio not installed" }
 $Key = Read-Host "Profound API key" -AsSecureString
 $Plain = [System.Net.NetworkCredential]::new("", $Key).Password
 $SourceDir = Split-Path -Parent $MyInvocation.MyCommand.Path

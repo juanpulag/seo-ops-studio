@@ -156,7 +156,7 @@ We considered but ultimately did **not** break the following:
   CLI layer only; the underlying function stays raw-mode by default.
 - `capture_screenshot()` API. Pre-flight is upgraded but the call
   signature and result dict are unchanged.
-- All v1.x command names (`/seo-ops-analisis audit`, `/seo-ops-analisis content`, …). Every
+- All v1.x command names (`/seo-ops-analyze audit`, `/seo-ops-analyze content`, …). Every
   one of them works in v2.
 
 ## How to upgrade

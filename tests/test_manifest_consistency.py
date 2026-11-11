@@ -197,14 +197,14 @@ def _extract_section(text: str, heading: str) -> str:
 
 
 def test_orchestrator_sub_skills_list_matches_disk():
-    """skills/seo-ops-analisis/SKILL.md Sub-Skills numbered list must equal set(skills/*) minus orchestrator itself.
+    """skills/seo-ops-analyze/SKILL.md Sub-Skills numbered list must equal set(skills/*) minus orchestrator itself.
 
     Background: v1.9.8 CI guard checks README/CLAUDE/AGENTS but not the orchestrator's
     own canonical-phrasing source. PR #92 surfaced that the orchestrator had stale "21
     specialized" claims and the list included seo-ops-firecrawl (extension-only). This
     guard closes that gap.
     """
-    text = (REPO_ROOT / "skills" / "seo-ops-analisis" / "SKILL.md").read_text(encoding="utf-8")
+    text = (REPO_ROOT / "skills" / "seo-ops-analyze" / "SKILL.md").read_text(encoding="utf-8")
     section = _extract_section(text, "Sub-Skills")
     listed_list = re.findall(r"^\d+\.\s+\*\*(seo-[a-z-]+)\*\*", section, re.MULTILINE)
     assert len(listed_list) == len(set(listed_list)), (
@@ -221,7 +221,7 @@ def test_orchestrator_sub_skills_list_matches_disk():
     # because it lives only in extensions/, not in skills/.
     # SEO Ops Studio layer (`seo-ops`, `seo-ops-*`) is listed in skills/seo-ops/SKILL.md instead
     # (see tests/test_ops_layer.py).
-    expected = on_disk - {"seo-ops-analisis"} - {"seo-ops", "seo-ops-configurar"}
+    expected = on_disk - {"seo-ops-analyze"} - {"seo-ops", "seo-ops-setup"}
     assert listed == expected, (
         f"Sub-Skills list != skills/ dir. "
         f"Missing from list: {sorted(expected - listed)}. "
@@ -230,13 +230,13 @@ def test_orchestrator_sub_skills_list_matches_disk():
 
 
 def test_orchestrator_subagents_list_matches_disk():
-    """skills/seo-ops-analisis/SKILL.md Subagents bullet list must equal set(agents/seo-*.md), no duplicates.
+    """skills/seo-ops-analyze/SKILL.md Subagents bullet list must equal set(agents/seo-*.md), no duplicates.
 
     Background: same drift pattern as Sub-Skills. Codex round 3 review surfaced that
     the Subagents list was missing seo-ops-flow (file on disk) and included seo-ops-firecrawl
     (no agent file on disk).
     """
-    text = (REPO_ROOT / "skills" / "seo-ops-analisis" / "SKILL.md").read_text(encoding="utf-8")
+    text = (REPO_ROOT / "skills" / "seo-ops-analyze" / "SKILL.md").read_text(encoding="utf-8")
     section = _extract_section(text, "Subagents")
     listed_list = re.findall(r"^- `(seo-[a-z-]+)`", section, re.MULTILINE)
     assert len(listed_list) == len(set(listed_list)), (
@@ -393,7 +393,7 @@ def test_reference_files_have_at_least_one_link():
     references/ but was reachable only through a sibling cross-link, not
     through its parent SKILL.md.
 
-    Cross-skill references are legitimate (e.g. skills/seo-ops-analisis/references/
+    Cross-skill references are legitimate (e.g. skills/seo-ops-analyze/references/
     backlink-quality.md is cited from seo-ops-backlinks/SKILL.md) so the search
     is repo-wide rather than per-parent-skill.
 

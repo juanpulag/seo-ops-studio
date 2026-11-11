@@ -5,14 +5,14 @@ set -euo pipefail
 # Wraps everything in main() to prevent partial execution on network failure
 
 main() {
-    SKILL_DIR="${HOME}/.claude/skills/seo-ops-analisis"
+    SKILL_DIR="${HOME}/.claude/skills/seo-ops-analyze"
     AGENT_DIR="${HOME}/.claude/agents"
     REPO_URL="https://github.com/juanpulag/seo-ops-studio"
     # Pin to a specific release tag to prevent silent updates from main.
     # This default MUST be bumped on every release. CI guard
     # (tests/test_manifest_consistency.py) enforces this matches plugin.json.
     # Override: SEO_OPS_TAG=main bash install.sh
-    REPO_TAG="${SEO_OPS_TAG:-v0.1.0}"
+    REPO_TAG="${SEO_OPS_TAG:-v0.2.0}"
 
     echo "════════════════════════════════════════"
     echo "║   SEO Ops Studio - Installer             ║"
@@ -38,7 +38,7 @@ main() {
 
     # Copy skill files
     echo "→ Installing skill files..."
-    cp -r "${TEMP_DIR}/seo-ops-studio/skills/seo-ops-analisis/"* "${SKILL_DIR}/"
+    cp -r "${TEMP_DIR}/seo-ops-studio/skills/seo-ops-analyze/"* "${SKILL_DIR}/"
 
     # Copy sub-skills
     if [ -d "${TEMP_DIR}/seo-ops-studio/skills" ]; then
@@ -148,9 +148,9 @@ main() {
         local doc="$1" temp_doc
         temp_doc="${doc}.seo-ops-studio-tmp"
         sed -e "s#\${CLAUDE_PLUGIN_ROOT}/skills/#${skills_root_esc}#g" \
-            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run#"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" run#g' \
-            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" setup#"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" setup#g' \
-            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" doctor#"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" doctor#g' \
+            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run#"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" run#g' \
+            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" setup#"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" setup#g' \
+            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" doctor#"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" doctor#g' \
             "${doc}" > "${temp_doc}"
         mv "${temp_doc}" "${doc}"
     }
@@ -204,7 +204,7 @@ main() {
     echo ""
     echo "Usage:"
     echo "  1. Start Claude Code:  claude"
-    echo "  2. Run commands:       /seo-ops-analisis audit https://example.com"
+    echo "  2. Run commands:       /seo-ops-analyze audit https://example.com"
     echo ""
     echo "Python deps location: ${SKILL_DIR}/requirements.txt"
     echo "Inspect remote scripts before piping them to bash."

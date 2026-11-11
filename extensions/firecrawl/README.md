@@ -28,19 +28,19 @@ The installer will prompt for your Firecrawl API key and configure the MCP serve
 
 | Command | Purpose | Credits |
 |---------|---------|---------|
-| `/seo-ops-analisis firecrawl crawl <url>` | Full-site crawl with content extraction | 1 per page |
-| `/seo-ops-analisis firecrawl map <url>` | Discover site structure (URLs only) | 0.5 per URL |
-| `/seo-ops-analisis firecrawl scrape <url>` | Single-page deep scrape with JS rendering | 1 |
-| `/seo-ops-analisis firecrawl search <query> <url>` | Search within a site | 1 per result |
+| `/seo-ops-analyze firecrawl crawl <url>` | Full-site crawl with content extraction | 1 per page |
+| `/seo-ops-analyze firecrawl map <url>` | Discover site structure (URLs only) | 0.5 per URL |
+| `/seo-ops-analyze firecrawl scrape <url>` | Single-page deep scrape with JS rendering | 1 |
+| `/seo-ops-analyze firecrawl search <query> <url>` | Search within a site | 1 per result |
 
 ## Integration with SEO Ops Studio
 
 When installed, other SEO Ops Studio skills automatically leverage Firecrawl:
 
-- **`/seo-ops-analisis audit`**: Uses `map` to discover all pages, then `crawl` for deep analysis
-- **`/seo-ops-analisis technical`**: Broken link detection across entire site
-- **`/seo-ops-analisis sitemap`**: Compare XML sitemap vs actual crawlable pages
-- **`/seo-ops-analisis content`**: Thin content detection at scale
+- **`/seo-ops-analyze audit`**: Uses `map` to discover all pages, then `crawl` for deep analysis
+- **`/seo-ops-analyze technical`**: Broken link detection across entire site
+- **`/seo-ops-analyze sitemap`**: Compare XML sitemap vs actual crawlable pages
+- **`/seo-ops-analyze content`**: Thin content detection at scale
 
 ## Cost
 

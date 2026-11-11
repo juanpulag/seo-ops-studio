@@ -10,7 +10,7 @@ argument-hint: "[url]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -244,7 +244,7 @@ Load `references/cultural-profiles.md` for pre-built profiles (DACH, Francophone
 
 ## Content Parity Audit
 
-**Command:** `/seo-ops-analisis hreflang audit <directory-or-url>`
+**Command:** `/seo-ops-analyze hreflang audit <directory-or-url>`
 
 Audit content parity across all language versions of a site or local content directory.
 

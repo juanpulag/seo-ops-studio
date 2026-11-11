@@ -10,7 +10,7 @@ Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
 # Check prerequisites
-$SeoSkillDir = "$env:USERPROFILE\.claude\skills\seo-ops-analisis"
+$SeoSkillDir = "$env:USERPROFILE\.claude\skills\seo-ops-analyze"
 if (-not (Test-Path $SeoSkillDir)) {
     Write-Host "[X] SEO Ops Studio is not installed." -ForegroundColor Red
     Write-Host "  Install it first: irm https://raw.githubusercontent.com/juanpulag/seo-ops-studio/main/install.ps1 | iex"
@@ -144,10 +144,10 @@ Write-Host ""
 Write-Host "Usage:" -ForegroundColor Cyan
 Write-Host "  1. Start Claude Code:  claude"
 Write-Host "  2. Run commands:"
-Write-Host "     /seo-ops-analisis dataforseo serp best coffee shops"
-Write-Host "     /seo-ops-analisis dataforseo keywords seo tools"
-Write-Host "     /seo-ops-analisis dataforseo backlinks example.com"
-Write-Host "     /seo-ops-analisis dataforseo ai-mentions your brand"
+Write-Host "     /seo-ops-analyze dataforseo serp best coffee shops"
+Write-Host "     /seo-ops-analyze dataforseo keywords seo tools"
+Write-Host "     /seo-ops-analyze dataforseo backlinks example.com"
+Write-Host "     /seo-ops-analyze dataforseo ai-mentions your brand"
 Write-Host ""
 Write-Host "All 23 commands: see extensions\dataforseo\README.md"
 Write-Host "To uninstall: .\extensions\dataforseo\uninstall.ps1"

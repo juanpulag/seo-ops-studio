@@ -366,7 +366,7 @@ def rule_14_schema_modified(baseline: dict, current: dict) -> dict:
         "schema_modified", "WARNING", triggered,
         old_hash[:12] + "..." if old_hash else None,
         new_hash[:12] + "..." if new_hash else None,
-        "Schema/JSON-LD content has been modified. Validate with /seo-ops-analisis schema."
+        "Schema/JSON-LD content has been modified. Validate with /seo-ops-analyze schema."
         if triggered else "Schema content hash unchanged.",
     )
 
@@ -380,7 +380,7 @@ def rule_15_schema_added(baseline: dict, current: dict) -> dict:
         "schema_added", "INFO", triggered,
         "0 schema blocks",
         f"{len(new_schema)} schema block(s)",
-        "New structured data added. Validate with /seo-ops-analisis schema."
+        "New structured data added. Validate with /seo-ops-analyze schema."
         if triggered else "No new schema added.",
     )
 

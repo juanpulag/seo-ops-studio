@@ -1,7 +1,7 @@
 <!-- Updated: 2026-04-17 -->
 # Keyword Placement Rules
 
-Internal readability and stuffing heuristic. Google publishes no target density; its spam policies treat repeating words "so often that it sounds unnatural" as keyword stuffing (developers.google.com/search/docs/essentials/spam-policies).
+Internal readability and stuffing heuristic. Google publishes no target density; its spam policies treat repeating words "so often that it sounds unnatural" as keyword stuffing (developers.google.com/search/docs/guidessentials/spam-policies).
 
 ## Primary Keyword Use
 

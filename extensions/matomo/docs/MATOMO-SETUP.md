@@ -6,10 +6,10 @@
    countries, referrers, and search keywords via
    `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_report.py`.
 2. **Live credential probe** via `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run matomo_auth.py --check`
-   used by the `/seo-ops-analisis matomo` skill and by the audit orchestrator to
+   used by the `/seo-ops-analyze matomo` skill and by the audit orchestrator to
    decide whether to spawn the `seo-ops-matomo` agent.
 3. A unified `seo-ops-matomo` skill that routes the right command at the
-   right script and an `seo-ops-matomo` agent for `/seo-ops-analisis audit`.
+   right script and an `seo-ops-matomo` agent for `/seo-ops-analyze audit`.
 
 ## Install
 
@@ -107,7 +107,7 @@ hints.
 
 ## Audit integration
 
-When `matomo_auth.py --check` succeeds, the `/seo-ops-analisis audit` orchestrator
+When `matomo_auth.py --check` succeeds, the `/seo-ops-analyze audit` orchestrator
 spawns the `seo-ops-matomo` agent alongside the existing specialists. The
 agent writes `output_dir/findings/matomo.md` with organic traffic trend,
 top landing pages, device / country split, and referrer breakdown. It

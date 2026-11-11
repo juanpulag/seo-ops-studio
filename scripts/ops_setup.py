@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""SEO Ops Studio · onboarding de credenciales.
+"""SEO Ops Studio · credential onboarding.
 
-Crea las plantillas de credenciales en ~/.config/seo-ops-studio/ (sin sobrescribir
-nada) y muestra qué APIs están conectadas, para qué sirve cada una y cómo conectarla.
-Nunca imprime claves ni secretos: solo si existen y, para la cuenta de servicio,
-su correo (que es lo que el usuario debe compartir en Search Console y GA4).
+Creates the credential templates in ~/.config/seo-ops-studio/ (never overwriting
+anything) and shows which APIs are connected, what each is for and how to connect it.
+Never prints keys or secrets: only whether they exist and, for the service account,
+its email (which the user must share in Search Console and GA4).
 
-Uso:
-  seo-ops run ops_setup.py --init            # crea plantillas que falten
-  seo-ops run ops_setup.py --status [--json] # estado de cada API
-  seo-ops run ops_setup.py --open            # abre la carpeta de credenciales
+Usage:
+  seo-ops run ops_setup.py --init            # create missing templates
+  seo-ops run ops_setup.py --status [--json] # status of each API
+  seo-ops run ops_setup.py --open            # open the credentials folder
 """
 from __future__ import annotations
 
@@ -23,45 +23,45 @@ import sys
 from pathlib import Path
 
 PLUGIN_ROOT = Path(__file__).resolve().parent.parent
-TEMPLATES = PLUGIN_ROOT / "templates" / "credenciales"
+TEMPLATES = PLUGIN_ROOT / "templates" / "credentials"
 CONFIG_DIR = Path(os.path.expanduser("~/.config/seo-ops-studio"))
 CLAUDE_JSON = Path(os.path.expanduser("~/.claude.json"))
 
 APIS = [
     {
         "id": "google_sa",
-        "nombre": "Google · cuenta de servicio (Search Console, GA4, URL Inspection, GTM)",
-        "por_que": "Datos reales del cliente: clics, impresiones, posiciones, indexación, tráfico orgánico y conversiones. Sin esto las prioridades se basan en buenas prácticas, no en impacto medido.",
-        "coste": "Gratis",
-        "como": "docs/es/02-cuenta-de-servicio.md → guarda la ruta del JSON en google-api.json (service_account_path).",
+        "name": "Google · service account (Search Console, GA4, URL Inspection, GTM)",
+        "why": "Real client data: clicks, impressions, positions, indexing, organic traffic and conversions. Without it, priorities are based on best practices rather than measured impact.",
+        "cost": "Free",
+        "how": "docs/guides/02-service-account.md → save the JSON path in google-api.json (service_account_path).",
     },
     {
         "id": "google_key",
-        "nombre": "Google · clave de API (PageSpeed Insights y CrUX)",
-        "por_que": "Core Web Vitals reales (LCP, INP, CLS) y Lighthouse sin el límite público que devuelve error 429. Sin clave, el rendimiento queda como estimación.",
-        "coste": "Gratis",
-        "como": "Google Cloud → APIs y servicios → Credenciales → Crear clave de API → google-api.json (api_key).",
+        "name": "Google · API key (PageSpeed Insights and CrUX)",
+        "why": "Real Core Web Vitals (LCP, INP, CLS) and Lighthouse without the public limit that returns 429 errors. Without a key, performance is an estimate.",
+        "cost": "Free",
+        "how": "Google Cloud → APIs & Services → Credentials → Create API key → google-api.json (api_key).",
     },
     {
         "id": "dataforseo",
-        "nombre": "DataForSEO (MCP)",
-        "por_que": "Posiciones reales por país e idioma, volúmenes, competencia, backlinks, Lighthouse a escala y menciones en LLMs.",
-        "coste": "Pago por uso",
-        "como": "Ejecuta tú en la terminal: bash extensions/dataforseo/install.sh (te pide usuario y contraseña de API; no los pegues en el chat).",
+        "name": "DataForSEO (MCP)",
+        "why": "Real rankings by country and language, volumes, competitors, backlinks, Lighthouse at scale and LLM mentions.",
+        "cost": "Pay as you go",
+        "how": "Run it yourself in the terminal: bash extensions/dataforseo/install.sh (it asks for the API username and password; do not paste them in the chat).",
     },
     {
         "id": "bing",
-        "nombre": "Bing Webmaster Tools",
-        "por_que": "Indexación y backlinks en Bing, que alimenta a Copilot.",
-        "coste": "Gratis",
-        "como": "bing.com/webmasters → Configuración → Acceso a API → backlinks-api.json (bing_api_key).",
+        "name": "Bing Webmaster Tools",
+        "why": "Indexing and backlinks in Bing, which feeds Copilot.",
+        "cost": "Free",
+        "how": "bing.com/webmasters → Settings → API access → backlinks-api.json (bing_api_key).",
     },
     {
         "id": "moz",
-        "nombre": "Moz API (nivel gratuito)",
-        "por_que": "Autoridad de dominio y enlaces como respaldo cuando no hay DataForSEO.",
-        "coste": "Gratis (cupo mensual)",
-        "como": "moz.com/products/api → backlinks-api.json (moz_api_key).",
+        "name": "Moz API (free tier)",
+        "why": "Domain authority and links as a fallback when DataForSEO is not available.",
+        "cost": "Free (monthly quota)",
+        "how": "moz.com/products/api → backlinks-api.json (moz_api_key).",
     },
 ]
 
@@ -98,21 +98,21 @@ def _load(name: str) -> dict:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
-        return {"_error": f"{name} no es JSON válido"}
+        return {"_error": f"{name} is not valid JSON"}
 
 
 def _service_account_email(path_value: str | None) -> tuple[bool, str | None, str | None]:
     if not path_value:
-        return False, None, "service_account_path vacío"
+        return False, None, "service_account_path is empty"
     sa_path = Path(os.path.expanduser(path_value))
     if not sa_path.is_file():
-        return False, None, f"no existe el archivo indicado en service_account_path"
+        return False, None, "the file set in service_account_path does not exist"
     try:
         data = json.loads(sa_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
-        return False, None, "el archivo de la cuenta de servicio no es JSON válido"
+        return False, None, "the service account file is not valid JSON"
     if data.get("type") != "service_account" or not data.get("client_email"):
-        return False, None, "el JSON no es una clave de cuenta de servicio"
+        return False, None, "the JSON is not a service account key"
     return True, data["client_email"], None
 
 
@@ -147,44 +147,44 @@ def status() -> dict:
     backlinks = _load("backlinks-api.json")
     sa_ok, sa_email, sa_problem = _service_account_email(google.get("service_account_path"))
     results = {
-        "google_sa": {"ok": sa_ok, "detalle": sa_email and f"correo a compartir: {sa_email}" or sa_problem},
-        "google_key": {"ok": bool(google.get("api_key")), "detalle": None if google.get("api_key") else "api_key vacío"},
-        "dataforseo": {"ok": _dataforseo_configured(), "detalle": None},
-        "bing": {"ok": bool(backlinks.get("bing_api_key")), "detalle": None},
-        "moz": {"ok": bool(backlinks.get("moz_api_key")), "detalle": None},
+        "google_sa": {"ok": sa_ok, "detail": sa_email and f"email to share: {sa_email}" or sa_problem},
+        "google_key": {"ok": bool(google.get("api_key")), "detail": None if google.get("api_key") else "api_key is empty"},
+        "dataforseo": {"ok": _dataforseo_configured(), "detail": None},
+        "bing": {"ok": bool(backlinks.get("bing_api_key")), "detail": None},
+        "moz": {"ok": bool(backlinks.get("moz_api_key")), "detail": None},
     }
     out = {
         "config_dir": str(CONFIG_DIR),
-        "plantillas_presentes": sorted(p.name for p in CONFIG_DIR.glob("*.json")) if CONFIG_DIR.is_dir() else [],
+        "templates_present": sorted(p.name for p in CONFIG_DIR.glob("*.json")) if CONFIG_DIR.is_dir() else [],
         "apis": [],
     }
     for api in APIS:
         res = results[api["id"]]
-        out["apis"].append({**api, "conectada": res["ok"], "detalle": res["detalle"]})
+        out["apis"].append({**api, "connected": res["ok"], "detail": res["detail"]})
     if sa_ok or google.get("api_key"):
-        out["verificacion_google"] = _google_live_check()
+        out["google_check"] = _google_live_check()
     return out
 
 
 def _print_human(report: dict) -> None:
-    print(f"Carpeta de credenciales: {report['config_dir']}\n")
+    print(f"Credentials folder: {report['config_dir']}\n")
     for api in report["apis"]:
-        mark = "✅" if api["conectada"] else "⬜"
-        print(f"{mark} {api['nombre']}  [{api['coste']}]")
-        print(f"   Para qué: {api['por_que']}")
-        if api["detalle"]:
-            print(f"   Estado: {api['detalle']}")
-        if not api["conectada"]:
-            print(f"   Cómo conectarla: {api['como']}")
+        mark = "✅" if api["connected"] else "⬜"
+        print(f"{mark} {api['name']}  [{api['cost']}]")
+        print(f"   What for: {api['why']}")
+        if api["detail"]:
+            print(f"   Status: {api['detail']}")
+        if not api["connected"]:
+            print(f"   How to connect: {api['how']}")
         print()
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--init", action="store_true", help="crea las plantillas que falten")
-    parser.add_argument("--status", action="store_true", help="muestra el estado de cada API")
-    parser.add_argument("--open", action="store_true", help="abre la carpeta de credenciales")
-    parser.add_argument("--json", action="store_true", help="salida JSON")
+    parser.add_argument("--init", action="store_true", help="create missing templates")
+    parser.add_argument("--status", action="store_true", help="show the status of each API")
+    parser.add_argument("--open", action="store_true", help="open the credentials folder")
+    parser.add_argument("--json", action="store_true", help="JSON output")
     args = parser.parse_args()
     if not (args.init or args.status or args.open):
         args.init = args.status = True
@@ -192,7 +192,7 @@ def main() -> int:
     if args.init:
         created = init()
         if not args.json:
-            print("Plantillas creadas: " + (", ".join(created) if created else "ninguna (ya existían)") + "\n")
+            print("Templates created: " + (", ".join(created) if created else "none (already present)") + "\n")
     if args.open:
         _secure_dir(CONFIG_DIR)
         opener = {"darwin": ["open"], "win32": ["explorer"]}.get(sys.platform, ["xdg-open"])

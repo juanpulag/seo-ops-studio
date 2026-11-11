@@ -16,17 +16,17 @@ as an optional extension for self-hosted analytics.
 
 ## SEO Ops Studio layer (what this fork adds)
 
-SEO Ops Studio is a standalone product derived from claude-seo v2.5.0 (MIT, Daniel Agrici; see `CREDITS.md`). The audit engine (`skills/seo-ops-analisis`, the `seo-ops-<english-name>` skills, `agents/`, `scripts/`, `extensions/`) comes from upstream. The product layer is ours and is Spanish-first:
+SEO Ops Studio is a standalone product derived from claude-seo v2.5.0 (MIT, Daniel Agrici; see `CREDITS.md`). The audit engine (`skills/seo-ops-analyze`, the `seo-ops-<name>` skills, `agents/`, `scripts/`, `extensions/`) comes from upstream. The product layer is ours, in English (Claude responds in the user's language on request):
 
-- `skills/seo-ops` (menu, onboarding detection, single-site audit + PDF) and `skills/seo-ops-configurar` (API onboarding). The multi-client layer (client folders, Notion backlog, cross-site detection, Looker Studio) lives in the private SEO Ops Studio Premium repo.
+- `skills/seo-ops` (menu, onboarding detection, single-site audit + PDF) and `skills/seo-ops-setup` (API onboarding). The multi-client layer (client folders, Notion backlog, cross-site detection, Looker Studio) lives in the private SEO Ops Studio Premium repo.
 - `scripts/ops_setup.py` (credential templates and status, never prints secrets) and `scripts/ops_pdf.py` (HTML→PDF with real data sources, no WeasyPrint dependency). Both are in `ALLOWED_CORE_SCRIPTS`.
-- `templates/credenciales/`: empty credential templates.
-- `docs/es/`: user-facing guides (APIs, service account).
+- `templates/credentials/`: empty credential templates.
+- `docs/guides/`: user-facing guides (APIs, service account).
 
 Rules for the product layer:
 - Credentials only in `~/.config/seo-ops-studio/`. Never ask for, print, or write user secrets. Users write keys themselves.
-- Every `/seo-ops auditoria` ends with a Markdown report and a PDF that lists the real data sources and what was not measured.
-- Upstream project: AgriciDaniel/claude-seo (not a git remote here). Pull improvements manually and re-apply the rename rules (claude-seo → seo-ops-studio, `CLAUDE_SEO_` → `SEO_OPS_`, `scripts/claude-seo` → `scripts/seo-ops`, `~/.config/claude-seo` → `~/.config/seo-ops-studio`, skill `seo` and `/seo` → `seo-ops-analisis`, every skill/agent `seo-X` → `seo-ops-X`). Do not rename Lighthouse's `"seo"` category key.
+- Every `/seo-ops audit` ends with a Markdown report and a PDF that lists the real data sources and what was not measured.
+- Upstream project: AgriciDaniel/claude-seo (not a git remote here). Pull improvements manually and re-apply the rename rules (claude-seo → seo-ops-studio, `CLAUDE_SEO_` → `SEO_OPS_`, `scripts/claude-seo` → `scripts/seo-ops`, `~/.config/claude-seo` → `~/.config/seo-ops-studio`, skill `seo` and `/seo` → `seo-ops-analyze`, every skill/agent `seo-X` → `seo-ops-X`). Do not rename Lighthouse's `"seo"` category key.
 
 ## Architecture
 
@@ -36,7 +36,7 @@ seo-ops-studio/
   CONTRIBUTORS.md                    # Community credits (Pro Hub Challenge)
   AGENTS.md                          # Multi-platform agent instructions (Cursor, Antigravity)
   .claude-plugin/
-    plugin.json                    # Plugin manifest (v0.1.0)
+    plugin.json                    # Plugin manifest (v0.2.0)
     marketplace.json               # Marketplace catalog for distribution
   skills/                            # 28 sub-skills (auto-discovered; includes the 2 SEO Ops skills)
     seo/                           # Main orchestrator skill
@@ -184,38 +184,38 @@ seo-ops-studio/
 
 | Command | Use Case |
 |---------|----------|
-| `/seo-ops-analisis audit <url>` | Full website audit with parallel subagents |
-| `/seo-ops-analisis page <url>` | Single page analysis |
-| `/seo-ops-analisis technical <url>` | Technical SEO across 9 categories |
-| `/seo-ops-analisis content <url>` | E-E-A-T and content quality |
-| `/seo-ops-analisis content-brief <topic>` | Detailed content brief: keywords, outline, internal links |
-| `/seo-ops-analisis schema <url>` | Schema markup detection, validation, generation |
-| `/seo-ops-analisis sitemap <url>` | Sitemap validation |
-| `/seo-ops-analisis sitemap generate` | Create new sitemap with industry templates |
-| `/seo-ops-analisis images <url>` | Image optimization |
-| `/seo-ops-analisis geo <url>` | AI search optimization (GEO) |
-| `/seo-ops-analisis agentic <url>` | Agent readiness (Lighthouse Agentic Browsing, AI agent access, WebMCP) |
-| `/seo-ops-analisis local <url>` | Local SEO (GBP, citations, reviews) |
-| `/seo-ops-analisis maps [command]` | Maps intelligence (geo-grid, GBP audit, competitors) |
-| `/seo-ops-analisis backlinks <url>` | Backlink profile analysis |
-| `/seo-ops-analisis cluster <seed>` | SERP-based semantic clustering |
-| `/seo-ops-analisis sxo <url>` | Search Experience Optimization |
-| `/seo-ops-analisis drift baseline\|compare\|history <url>` | SEO drift monitoring |
-| `/seo-ops-analisis ecommerce <url>` | E-commerce SEO |
-| `/seo-ops-analisis hreflang [url]` | Hreflang and international SEO |
-| `/seo-ops-analisis plan <type>` | Strategic planning by industry |
-| `/seo-ops-analisis programmatic [url\|plan]` | Programmatic SEO analysis |
-| `/seo-ops-analisis competitor-pages [url\|generate]` | Competitor comparison pages |
-| `/seo-ops-analisis flow [stage] [url\|topic]` | FLOW framework prompts |
-| `/seo-ops-analisis google [command] [url]` | Google SEO APIs (GSC, PSI, CrUX, GA4) |
-| `/seo-ops-analisis dataforseo [command]` | Live SEO data (extension) |
-| `/seo-ops-analisis image-gen [use-case] <desc>` | AI image generation (extension) |
-| `/seo-ops-analisis firecrawl [command] <url>` | Full-site crawling (extension) |
-| `/seo-ops-analisis ahrefs [command] <url>` | Backlinks, organic keywords, and content data via the official Ahrefs MCP (extension) |
-| `/seo-ops-analisis seranking [command]` | AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode (extension) |
-| `/seo-ops-analisis profound [command]` | LLM citation tracking with time-series data (extension) |
-| `/seo-ops-analisis bing [command] <url>` | Bing Webmaster Tools + IndexNow URL submission (extension) |
-| `/seo-ops-analisis unlighthouse <url>` | Multi-page Lighthouse runner, runs locally (extension) |
+| `/seo-ops-analyze audit <url>` | Full website audit with parallel subagents |
+| `/seo-ops-analyze page <url>` | Single page analysis |
+| `/seo-ops-analyze technical <url>` | Technical SEO across 9 categories |
+| `/seo-ops-analyze content <url>` | E-E-A-T and content quality |
+| `/seo-ops-analyze content-brief <topic>` | Detailed content brief: keywords, outline, internal links |
+| `/seo-ops-analyze schema <url>` | Schema markup detection, validation, generation |
+| `/seo-ops-analyze sitemap <url>` | Sitemap validation |
+| `/seo-ops-analyze sitemap generate` | Create new sitemap with industry templates |
+| `/seo-ops-analyze images <url>` | Image optimization |
+| `/seo-ops-analyze geo <url>` | AI search optimization (GEO) |
+| `/seo-ops-analyze agentic <url>` | Agent readiness (Lighthouse Agentic Browsing, AI agent access, WebMCP) |
+| `/seo-ops-analyze local <url>` | Local SEO (GBP, citations, reviews) |
+| `/seo-ops-analyze maps [command]` | Maps intelligence (geo-grid, GBP audit, competitors) |
+| `/seo-ops-analyze backlinks <url>` | Backlink profile analysis |
+| `/seo-ops-analyze cluster <seed>` | SERP-based semantic clustering |
+| `/seo-ops-analyze sxo <url>` | Search Experience Optimization |
+| `/seo-ops-analyze drift baseline\|compare\|history <url>` | SEO drift monitoring |
+| `/seo-ops-analyze ecommerce <url>` | E-commerce SEO |
+| `/seo-ops-analyze hreflang [url]` | Hreflang and international SEO |
+| `/seo-ops-analyze plan <type>` | Strategic planning by industry |
+| `/seo-ops-analyze programmatic [url\|plan]` | Programmatic SEO analysis |
+| `/seo-ops-analyze competitor-pages [url\|generate]` | Competitor comparison pages |
+| `/seo-ops-analyze flow [stage] [url\|topic]` | FLOW framework prompts |
+| `/seo-ops-analyze google [command] [url]` | Google SEO APIs (GSC, PSI, CrUX, GA4) |
+| `/seo-ops-analyze dataforseo [command]` | Live SEO data (extension) |
+| `/seo-ops-analyze image-gen [use-case] <desc>` | AI image generation (extension) |
+| `/seo-ops-analyze firecrawl [command] <url>` | Full-site crawling (extension) |
+| `/seo-ops-analyze ahrefs [command] <url>` | Backlinks, organic keywords, and content data via the official Ahrefs MCP (extension) |
+| `/seo-ops-analyze seranking [command]` | AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode (extension) |
+| `/seo-ops-analyze profound [command]` | LLM citation tracking with time-series data (extension) |
+| `/seo-ops-analyze bing [command] <url>` | Bing Webmaster Tools + IndexNow URL submission (extension) |
+| `/seo-ops-analyze unlighthouse <url>` | Multi-page Lighthouse runner, runs locally (extension) |
 
 ## Development Rules
 
@@ -225,7 +225,7 @@ seo-ops-studio/
 - Follow kebab-case naming for all skill directories
 - Agents invoked via Agent tool, never via Bash
 - Bundled tools run through `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run`; plugin state uses `CLAUDE_PLUGIN_DATA`
-- Manual Python dependencies install into `~/.claude/skills/seo-ops-analisis/.venv/`
+- Manual Python dependencies install into `~/.claude/skills/seo-ops-analyze/.venv/`
 - Test with `python3 -m pytest tests/` after changes (if applicable)
 
 ## Security Rules
@@ -248,7 +248,7 @@ seo-ops-studio/
 - **No `page-break-inside: avoid`** on any element (causes white gaps in WeasyPrint)
 - **Post-generation review**: `_review_pdf()` runs automatically, checking for empty images, thin sections, duplicates
 - **Before presenting any PDF to the user**: verify the review passes (`"status": "PASS"`)
-- **Cross-skill enforcement**: After completing ANY analysis command (audit, page, technical, content, schema, geo, local, maps), offer: "Generate a PDF report? Use `/seo-ops-analisis google report`"
+- **Cross-skill enforcement**: After completing ANY analysis command (audit, page, technical, content, schema, geo, local, maps), offer: "Generate a PDF report? Use `/seo-ops-analyze google report`"
 - **Google logo** appears on title page when using Google API data ("Powered by Google APIs")
 
 ## Ecosystem

@@ -347,7 +347,7 @@ def run_psi(url: str, strategy: str, api_key: Optional[str], timeout: int = 180)
             message = resp.text[:300]
         hint = ""
         if resp.status_code == 429 or "Quota" in message:
-            hint = " Configure a Google API key (see /seo-ops-analisis google setup)."
+            hint = " Configure a Google API key (see /seo-ops-analyze google setup)."
         raise RuntimeError(redact_google_api_key(
             f"PSI returned HTTP {resp.status_code}: {message[:300]}{hint}"))
     try:

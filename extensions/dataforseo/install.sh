@@ -7,7 +7,7 @@ set -euo pipefail
 main() {
     SKILL_DIR="${HOME}/.claude/skills/seo-ops-dataforseo"
     AGENT_DIR="${HOME}/.claude/agents"
-    SEO_SKILL_DIR="${HOME}/.claude/skills/seo-ops-analisis"
+    SEO_SKILL_DIR="${HOME}/.claude/skills/seo-ops-analyze"
     # MCP servers live in ~/.claude.json (the file `claude mcp add` writes).
     # NOT ~/.claude/settings.json - `mcpServers` is not a key Claude Code reads
     # there, so entries written to settings.json silently never load.
@@ -19,16 +19,16 @@ main() {
     echo "════════════════════════════════════════"
     echo ""
 
-    # Support both traditional (curl|bash → ~/.claude/skills/seo-ops-analisis) and marketplace
-    # (plugin install → ~/.claude/plugins/cache/.../skills/seo-ops-analisis) installations.
+    # Support both traditional (curl|bash → ~/.claude/skills/seo-ops-analyze) and marketplace
+    # (plugin install → ~/.claude/plugins/cache/.../skills/seo-ops-analyze) installations.
     # Resolve early using BASH_SOURCE so it works even when run from the plugin cache.
     _EARLY_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-    _PLUGIN_SEO_DIR="$(cd "${_EARLY_SCRIPT_DIR}/../.." 2>/dev/null && pwd)/skills/seo-ops-analisis"
+    _PLUGIN_SEO_DIR="$(cd "${_EARLY_SCRIPT_DIR}/../.." 2>/dev/null && pwd)/skills/seo-ops-analyze"
     if [ ! -d "${SEO_SKILL_DIR}" ] && [ -d "${_PLUGIN_SEO_DIR}" ]; then
         SEO_SKILL_DIR="${_PLUGIN_SEO_DIR}"
     fi
     if [ ! -d "${SEO_SKILL_DIR}" ]; then
-        _GLOB_MATCH=$(ls -d "${HOME}/.claude/plugins/cache/*/seo-ops-studio/"*/skills/seo-ops-analisis 2>/dev/null | tail -n1 || true)
+        _GLOB_MATCH=$(ls -d "${HOME}/.claude/plugins/cache/*/seo-ops-studio/"*/skills/seo-ops-analyze 2>/dev/null | tail -n1 || true)
         [ -n "${_GLOB_MATCH}" ] && [ -d "${_GLOB_MATCH}" ] && SEO_SKILL_DIR="${_GLOB_MATCH}"
     fi
 
@@ -171,10 +171,10 @@ PY
     echo "Usage:"
     echo "  1. Start Claude Code:  claude"
     echo "  2. Run commands:"
-    echo "     /seo-ops-analisis dataforseo serp best coffee shops"
-    echo "     /seo-ops-analisis dataforseo keywords seo tools"
-    echo "     /seo-ops-analisis dataforseo backlinks example.com"
-    echo "     /seo-ops-analisis dataforseo ai-mentions your brand"
+    echo "     /seo-ops-analyze dataforseo serp best coffee shops"
+    echo "     /seo-ops-analyze dataforseo keywords seo tools"
+    echo "     /seo-ops-analyze dataforseo backlinks example.com"
+    echo "     /seo-ops-analyze dataforseo ai-mentions your brand"
     echo ""
     echo "All 23 commands: see extensions/dataforseo/README.md"
     echo "To uninstall: ./extensions/dataforseo/uninstall.sh"

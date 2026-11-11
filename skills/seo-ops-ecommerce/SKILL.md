@@ -11,7 +11,7 @@ compatibility: "Enhanced with DataForSEO Merchant API (optional)"
 metadata:
   author: AgriciDaniel
   original_author: "Matej Marjanovic (Pro Hub Challenge)"
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -25,10 +25,10 @@ DataForSEO Merchant API for live Google Shopping and Amazon data.
 
 | Command | Purpose | DataForSEO? |
 |---------|---------|-------------|
-| `/seo-ops-analisis ecommerce <url>` | Full e-commerce SEO analysis of a product page or store | Optional |
-| `/seo-ops-analisis ecommerce products <keyword>` | Google Shopping competitive analysis | Required |
-| `/seo-ops-analisis ecommerce gaps <domain>` | Keyword gap: organic vs Shopping visibility | Required |
-| `/seo-ops-analisis ecommerce schema <url>` | Product schema validation and enhancement | No |
+| `/seo-ops-analyze ecommerce <url>` | Full e-commerce SEO analysis of a product page or store | Optional |
+| `/seo-ops-analyze ecommerce products <keyword>` | Google Shopping competitive analysis | Required |
+| `/seo-ops-analyze ecommerce gaps <domain>` | Keyword gap: organic vs Shopping visibility | Required |
+| `/seo-ops-analyze ecommerce schema <url>` | Product schema validation and enhancement | No |
 
 ---
 
@@ -381,7 +381,7 @@ UCP itself is live; what's early is broad merchant adoption. Flag a literal
 2. [High] ...
 3. [Medium] ...
 
-Generate a PDF report? Use `/seo-ops-analisis google report`
+Generate a PDF report? Use `/seo-ops-analyze google report`
 ```
 
 ## Security

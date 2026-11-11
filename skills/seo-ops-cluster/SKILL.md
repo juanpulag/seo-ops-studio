@@ -2,7 +2,7 @@
 name: seo-ops-cluster
 description: >
   Cluster keywords by SERP overlap and design hub-and-spoke content architecture
-  with internal links. Use for planning; `/seo-ops-analisis cluster execute` then writes the
+  with internal links. Use for planning; `/seo-ops-analyze cluster execute` then writes the
   posts with claude-blog's blog-write skill when it is installed, or content
   briefs when it is not.
 user-invocable: true
@@ -11,7 +11,7 @@ license: MIT
 metadata:
   author: AgriciDaniel
   original_author: "Lutfiya Miller (Pro Hub Challenge Winner)"
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -30,10 +30,10 @@ interactive cluster map visualizations.
 
 | Command | What it does |
 |---------|-------------|
-| `/seo-ops-analisis cluster plan <seed-keyword>` | Full planning workflow: expand, cluster, architect, visualize |
-| `/seo-ops-analisis cluster plan --from strategy` | Import from existing `/seo-ops-analisis plan` output |
-| `/seo-ops-analisis cluster execute` | Execute plan: create content via claude-blog or output briefs |
-| `/seo-ops-analisis cluster map` | Regenerate the interactive cluster visualization |
+| `/seo-ops-analyze cluster plan <seed-keyword>` | Full planning workflow: expand, cluster, architect, visualize |
+| `/seo-ops-analyze cluster plan --from strategy` | Import from existing `/seo-ops-analyze plan` output |
+| `/seo-ops-analyze cluster execute` | Execute plan: create content via claude-blog or output briefs |
+| `/seo-ops-analyze cluster map` | Regenerate the interactive cluster visualization |
 
 ---
 
@@ -180,7 +180,7 @@ Generate `cluster-map.html` using the template at `templates/cluster-map.html`.
 
 When invoked with `--from strategy`:
 
-1. Look for the most recent `/seo-ops-analisis plan` output in the current directory (search for
+1. Look for the most recent `/seo-ops-analyze plan` output in the current directory (search for
    files matching `*SEO*Plan*`, `*strategy*`, `*content-strategy*`)
 2. Parse markdown tables for: keywords, page types, content pillars, URL structures
 3. Validate extracted data: check for duplicates, missing keywords, incomplete entries
@@ -188,13 +188,13 @@ When invoked with `--from strategy`:
 5. Build cluster plan using the imported keywords as the starting set (skip Step 1)
 
 If no strategy file is found, prompt the user: "No existing SEO plan found in the
-current directory. Run `/seo-ops-analisis plan` first, or provide a seed keyword for fresh clustering."
+current directory. Run `/seo-ops-analyze plan` first, or provide a seed keyword for fresh clustering."
 
 ---
 
 ## Execution Workflow
 
-When `/seo-ops-analisis cluster execute` is invoked:
+When `/seo-ops-analyze cluster execute` is invoked:
 
 ### Check for claude-blog
 
@@ -241,7 +241,7 @@ for example claude-blog:blog-write)? If unsure, check both install layouts:
 
 ## Cluster Scorecard
 
-Post-execution quality report. Run automatically after `/seo-ops-analisis cluster execute` or
+Post-execution quality report. Run automatically after `/seo-ops-analyze cluster execute` or
 on demand via analysis of the output directory.
 
 | Metric | Target | How Measured |
@@ -259,7 +259,7 @@ on demand via analysis of the output directory.
 
 ## Map Regeneration
 
-When `/seo-ops-analisis cluster map` is invoked:
+When `/seo-ops-analyze cluster map` is invoked:
 
 1. Read `cluster-plan.json` from the current directory
 2. Scan output directory and update post statuses (planned vs written)
@@ -293,7 +293,7 @@ All outputs are written to the current working directory:
 | `seo-ops-google` | Reporting: generate PDF report of cluster plan and scorecard |
 
 After cluster planning or execution completes, offer:
-"Generate a PDF report? Use `/seo-ops-analisis google report`"
+"Generate a PDF report? Use `/seo-ops-analyze google report`"
 
 ---
 
@@ -304,8 +304,8 @@ After cluster planning or execution completes, offer:
 | "No seed keyword provided" | Missing argument | Prompt user for seed keyword or URL |
 | "Insufficient keyword variants" | Expansion yielded < 15 keywords | Run second expansion pass with PAA questions |
 | "SERP data unavailable" | WebSearch and DataForSEO both failing | Retry after 30s; if persistent, use intent-only clustering with warning |
-| "No strategy file found" | `--from strategy` but no plan exists | Prompt user to run `/seo-ops-analisis plan` first |
-| "cluster-plan.json not found" | Execute without planning | Prompt user to run `/seo-ops-analisis cluster plan` first |
+| "No strategy file found" | `--from strategy` but no plan exists | Prompt user to run `/seo-ops-analyze plan` first |
+| "cluster-plan.json not found" | Execute without planning | Prompt user to run `/seo-ops-analyze cluster plan` first |
 | "claude-blog not installed" | Execute attempted without blog skill | Generate content briefs instead; suggest installation |
 | "DataForSEO budget exceeded" | Cost check returned "blocked" | Fall back to WebSearch; inform user |
 | "Duplicate primary keywords" | Cannibalization detected | Merge affected posts or reassign keywords |
@@ -328,4 +328,4 @@ After cluster planning or execution completes, offer:
 
 ## FLOW Framework Integration
 
-For prompt-guided keyword research and gap analysis, use `/seo-ops-analisis flow find [url|topic]`: FLOW's 5 find-stage prompts complement the SERP-overlap clustering methodology with structured discovery prompts.
+For prompt-guided keyword research and gap analysis, use `/seo-ops-analyze flow find [url|topic]`: FLOW's 5 find-stage prompts complement the SERP-overlap clustering methodology with structured discovery prompts.

@@ -12,7 +12,7 @@ argument-hint: "[url]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -199,7 +199,7 @@ Sorted by file size impact (largest savings first):
 
 When DataForSEO MCP is available, enhance the image audit with competitive data.
 
-### `/seo-ops-analisis images serp <keyword>`
+### `/seo-ops-analyze images serp <keyword>`
 
 Cross-reference on-page images with the image results visible in the Google SERP.
 
@@ -230,7 +230,7 @@ If DataForSEO MCP is not available, inform user and suggest installing the exten
 
 Optimize image files for SEO: format conversion, metadata injection, compression.
 
-### `/seo-ops-analisis images optimize <path>`
+### `/seo-ops-analyze images optimize <path>`
 
 Optimize image file(s) for web and SEO. Converts to WebP/AVIF, injects IPTC
 metadata, compresses, and generates responsive variants.
@@ -381,7 +381,7 @@ Google extracts these IPTC `DigitalSourceType` values:
 > text alone. No new published image-SEO lever yet; keep descriptive alt text +
 > clean structured data.
 
-When `/seo-ops-analisis images optimize` is run on AI-generated assets, prompt the user to
+When `/seo-ops-analyze images optimize` is run on AI-generated assets, prompt the user to
 confirm the source type and inject the matching IPTC value automatically.
 
 For **AI-generated product titles and descriptions**, Google Merchant Center

@@ -137,14 +137,14 @@ try {
 }
 
 # Set paths
-$SkillDir = "$env:USERPROFILE\.claude\skills\seo-ops-analisis"
+$SkillDir = "$env:USERPROFILE\.claude\skills\seo-ops-analyze"
 $AgentDir = "$env:USERPROFILE\.claude\agents"
 $RepoUrl = "https://github.com/juanpulag/seo-ops-studio"
 # Pin to a specific release tag to prevent silent updates from main.
 # This default MUST be bumped on every release. CI guard
 # (tests/test_manifest_consistency.py) enforces this matches plugin.json.
 # Override: $env:SEO_OPS_TAG = 'main'; .\install.ps1
-$RepoTag = if ($env:SEO_OPS_TAG) { $env:SEO_OPS_TAG } else { 'v0.1.0' }
+$RepoTag = if ($env:SEO_OPS_TAG) { $env:SEO_OPS_TAG } else { 'v0.2.0' }
 
 # Create directories
 New-Item -ItemType Directory -Force -Path $SkillDir | Out-Null
@@ -167,7 +167,7 @@ try {
 
     # Copy skill files
     Write-Host "=> Installing skill files..." -ForegroundColor Yellow
-    $skillSource = Join-Path $TempDir 'skills\seo-ops-analisis'
+    $skillSource = Join-Path $TempDir 'skills\seo-ops-analyze'
     if (-not (Test-Path $skillSource)) {
         throw "Could not find skill source folder in repo clone."
     }
@@ -296,7 +296,7 @@ try {
     # Claude Code's Bash tool expands $HOME on Windows as well as Unix. The
     # replacement consumes the plugin-root token, so a second pass is a no-op.
     $pluginRunner = '"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run'
-    $manualRunner = '"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" run'
+    $manualRunner = '"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" run'
     $installedDocs = @()
     Get-ChildItem -Path $SkillsPath -Directory | ForEach-Object {
         $sourceRoot = $_.FullName
@@ -338,8 +338,8 @@ try {
         $text = [System.IO.File]::ReadAllText($_.FullName)
         $pluginSetup = '"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" setup'
         $pluginDoctor = '"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" doctor'
-        $manualSetup = '"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" setup'
-        $manualDoctor = '"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" doctor'
+        $manualSetup = '"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" setup'
+        $manualDoctor = '"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" doctor'
         $updated = $text.Replace($pluginRunner, $manualRunner)
         $updated = $updated.Replace($pluginSetup, $manualSetup)
         $updated = $updated.Replace($pluginDoctor, $manualDoctor)
@@ -379,6 +379,6 @@ Write-Host "[+] SEO Ops Studio installed successfully!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Usage:" -ForegroundColor Cyan
 Write-Host "  1. Start Claude Code:  claude"
-Write-Host "  2. Run commands:       /seo-ops-analisis audit https://example.com"
+Write-Host "  2. Run commands:       /seo-ops-analyze audit https://example.com"
 Write-Host ""
 Write-Host "Python deps location: $installedReqFile" -ForegroundColor Gray

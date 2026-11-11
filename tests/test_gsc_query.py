@@ -66,6 +66,6 @@ def test_sitemaps_strip_deprecated_indexed_counts_and_point_to_url_inspection() 
 
 def test_seo_google_docs_identify_url_inspection_as_indexation_truth() -> None:
     text = (REPO_ROOT / "skills" / "seo-ops-google" / "SKILL.md").read_text(encoding="utf-8")
-    sitemap_section = text[text.index("### `/seo-ops-analisis google sitemaps <property>`"):]
+    sitemap_section = text[text.index("### `/seo-ops-analyze google sitemaps <property>`"):]
     assert "URL Inspection API" in sitemap_section
     assert "indexation truth" in sitemap_section

@@ -1,81 +1,85 @@
 # SEO Ops Studio
 
-**Auditorías SEO completas, con datos reales y un PDF listo para entregar, desde Claude Code.** En español.
+**Full SEO audits, with real data and a client-ready PDF, from Claude Code.**
 
-Escribe `/seo-ops auditoria https://tusitio.com` y obtienes un informe con Health Score, problemas priorizados, plan de acción y un PDF con las fuentes de datos que se usaron (y las que no).
+Type `/seo-ops audit https://yoursite.com` and get a report with a Health Score, prioritized issues, an action plan and a PDF that lists the data sources used (and the ones that were not).
 
-> 28 sub-skills y 19 sub-agents. Licencia MIT. Basado en [claude-seo](https://github.com/AgriciDaniel/claude-seo) de Daniel Agrici (ver `CREDITS.md`).
+> 28 sub-skills and 19 sub-agents. MIT licensed. Based on [claude-seo](https://github.com/AgriciDaniel/claude-seo) by Daniel Agrici (see `CREDITS.md`).
 
 ---
 
-## Qué incluye
+## What's included
 
-- **Onboarding de APIs guiado** (`/seo-ops-configurar`): crea las plantillas de credenciales, explica para qué sirve cada API y cuánto cuesta, guía la cuenta de servicio de Google paso a paso y verifica la conexión. Nunca te pide claves en el chat.
-- **Auditoría completa con PDF** (`/seo-ops auditoria <url>`): especialistas en paralelo (técnico, contenido, schema, rendimiento, GEO, imágenes, sitemap…), Health Score ponderado y PDF con las fuentes reales.
-- **Análisis sueltos** (`/seo-ops-analisis …`): técnico, contenido (E-E-A-T), schema, sitemap, Core Web Vitals, GEO para buscadores con IA, hreflang, SEO local, e-commerce, backlinks, clusters de keywords y más.
-- **APIs conectadas**: Search Console, GA4, CrUX y PageSpeed (gratis), DataForSEO (pago por uso), Bing Webmaster y Moz (gratis).
+- **Guided API onboarding** (`/seo-ops-setup`): creates the credential templates, explains what each API is for and what it costs, walks you through the Google service account and verifies the connection. It never asks for keys in the chat.
+- **Full audit with PDF** (`/seo-ops audit <url>`): parallel specialists (technical, content, schema, performance, GEO, images, sitemap…), a weighted Health Score and a PDF with the real sources.
+- **One-off analyses** (`/seo-ops-analyze …`): technical, content (E-E-A-T), schema, sitemap, Core Web Vitals, GEO for AI search, hreflang, local SEO, e-commerce, backlinks, keyword clusters and more.
+- **Connected APIs**: Search Console, GA4, CrUX and PageSpeed (free), DataForSEO (pay as you go), Bing Webmaster and Moz (free).
 
-## Comandos
+## Commands
 
-| Comando | Qué hace |
+| Command | What it does |
 |---|---|
-| `/seo-ops` | Menú. En el primer uso lanza el onboarding |
-| `/seo-ops-configurar` | Conecta y verifica las APIs |
-| `/seo-ops auditoria <url>` | Auditoría completa → informe + PDF en `auditorias/<dominio>/` |
-| `/seo-ops estado` | Qué APIs están conectadas y qué falta |
-| `/seo-ops-analisis …` | Análisis sueltos del motor (`technical`, `content`, `schema`, `geo`, `hreflang`, `local`, `page`…) |
+| `/seo-ops` | Menu. Launches onboarding on first use |
+| `/seo-ops-setup` | Connects and verifies the APIs |
+| `/seo-ops audit <url>` | Full audit: report + PDF in `audits/<domain>/` |
+| `/seo-ops status` | Which APIs are connected and what is missing |
+| `/seo-ops-analyze …` | One-off engine analyses (`technical`, `content`, `schema`, `geo`, `hreflang`, `local`, `page`…) |
 
-## Instalación
+## Installation
 
-Requiere [Claude Code](https://claude.com/claude-code) y Python 3.11 to 3.14 (el plugin crea su propio entorno aislado).
+Requires [Claude Code](https://claude.com/claude-code) and Python 3.11 to 3.14 (the plugin creates its own isolated environment).
 
 ```bash
 /plugin marketplace add juanpulag/seo-ops-studio
 /plugin install seo-ops-studio@seo-ops-studio
 ```
 
-Reinicia Claude Code y, en cualquier carpeta, escribe `/seo-ops`.
+Restart Claude Code and, in any folder, type `/seo-ops`.
 
-> Todos los comandos empiezan por `/seo-ops`, así que SEO Ops Studio puede convivir con el claude-seo original.
+> Every command starts with `/seo-ops`, so SEO Ops Studio can live alongside the original claude-seo.
 
-Para actualizar:
+To update:
 
 ```bash
 /plugin marketplace update seo-ops-studio
 /plugin update seo-ops-studio@seo-ops-studio
 ```
 
-## Primeros pasos
+## Getting started
 
-1. `/seo-ops-configurar`: conecta al menos Google (cuenta de servicio + clave de API). Sin APIs también funciona, pero los datos de rendimiento y tráfico serán estimados.
-2. Abre Claude Code en la carpeta donde quieras guardar las auditorías.
-3. `/seo-ops auditoria https://tusitio.com`.
+1. `/seo-ops-setup`: connect at least Google (service account + API key). It also works with no APIs, but performance and traffic data will be estimates.
+2. Open Claude Code in the folder where you want to keep your audits.
+3. `/seo-ops audit https://yoursite.com`.
 
-Guías en `docs/es/`:
-- `01-apis.md`: qué APIs conectar y por qué.
-- `02-cuenta-de-servicio.md`: crear la cuenta de servicio de Google paso a paso.
+Guides in `docs/guides/`:
+- `01-apis.md`: which APIs to connect and why.
+- `02-service-account.md`: create the Google service account step by step.
+
+## Other languages
+
+The plugin is in English, and Claude works in whatever language you use. Just ask: "write the report and the PDF in Spanish".
 
 ## SEO Ops Studio Premium
 
-Para consultores y agencias que gestionan **varios clientes y muchos sitios**. Añade la metodología de operación:
+For consultants and agencies managing **multiple clients and many sites**. Adds the operating methodology:
 
-| Básica (este repo) | Premium |
+| Basic (this repo) | Premium |
 |---|---|
-| Auditoría + PDF de un sitio | Auditoría por cliente, comparada con los demás sitios del cliente |
-| Informe con hallazgos | Cada hallazgo se convierte en una tarea de un **backlog en Notion**, con evidencia, criterio de aceptación y cómo validarla, sin duplicados |
-| No incluido | Detección de problemas de **plataforma** que se repiten entre sitios (una sola tarea, no treinta) |
-| No incluido | Una carpeta, una memoria y un Notion **por cliente** |
-| No incluido | Tablero en **Looker Studio** (GSC y GA4 nativos + datos de las auditorías) |
-| No incluido | Prioridad calculada (impacto × severidad × alcance ÷ esfuerzo) y tablero de pendientes por país y severidad |
+| Audit + PDF for one site | Per-client audit, compared against the client's other sites |
+| Report with findings | Each finding becomes a task in a **Notion backlog**, with evidence, acceptance criteria and how to validate, without duplicates |
+| Not included | Detection of **platform** issues that repeat across sites (one task, not thirty) |
+| Not included | One folder, one memory and one Notion **per client** |
+| Not included | **Looker Studio** dashboard (native GSC and GA4 + audit data) |
+| Not included | Calculated priority (impact × severity × scope ÷ effort) and a panel of open tasks by country and severity |
 
-¿Te interesa? Abre un [issue](https://github.com/juanpulag/seo-ops-studio/issues) con el título «Premium».
+Interested? Open an [issue](https://github.com/juanpulag/seo-ops-studio/issues) titled "Premium".
 
-## Seguridad
+## Security
 
-- Las credenciales viven solo en `~/.config/seo-ops-studio/` y en el conector de DataForSEO. Nunca en tu proyecto ni en Git.
-- El plugin nunca te pide claves en el chat ni las imprime.
-- Detalles en `SECURITY.md` y `PRIVACY.md`.
+- Credentials live only in `~/.config/seo-ops-studio/` and in the DataForSEO connector. Never in your project or in Git.
+- The plugin never asks for keys in the chat and never prints them.
+- Details in `SECURITY.md` and `PRIVACY.md`.
 
-## Créditos
+## Credits
 
-El motor de auditoría proviene de **claude-seo** (MIT) de Daniel Agrici, y el framework FLOW (CC BY 4.0) es del mismo autor. Detalles en `CREDITS.md` y `LICENSE`.
+The audit engine comes from **claude-seo** (MIT) by Daniel Agrici, and the FLOW framework (CC BY 4.0) is by the same author. Details in `CREDITS.md` and `LICENSE`.

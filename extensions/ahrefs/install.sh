@@ -25,7 +25,7 @@ main() {
         echo "✗ Node 18+ / npx required."; exit 1;
     }
 
-    if [ ! -d "${SKILL_DIR}/seo-ops-analisis" ]; then
+    if [ ! -d "${SKILL_DIR}/seo-ops-analyze" ]; then
         echo "✗ seo-ops-studio base plugin not installed."
         echo "  Install it first: curl -fsSL https://raw.githubusercontent.com/juanpulag/seo-ops-studio/main/install.sh | bash"
         exit 1
@@ -88,7 +88,7 @@ PY
 
     echo
     echo "Done. Open a new Claude Code session and run:"
-    echo "  /seo-ops-analisis ahrefs metrics https://example.com"
+    echo "  /seo-ops-analyze ahrefs metrics https://example.com"
     echo
     echo "Full docs: extensions/ahrefs/docs/AHREFS-SETUP.md"
 }

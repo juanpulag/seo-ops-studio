@@ -11,7 +11,7 @@ argument-hint: "[stage] [url|topic]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "0.1.0"
+  version: "0.2.0"
   category: seo
 ---
 
@@ -23,7 +23,7 @@ be driven by structured, evidence-backed AI prompts rather than improvised queri
 
 > Framework and prompts © Daniel Agrici, CC BY 4.0: github.com/AgriciDaniel/flow
 
-**Runtime context:** Load `references/flow-framework.md` on every `/seo-ops-analisis flow` activation.
+**Runtime context:** Load `references/flow-framework.md` on every `/seo-ops-analyze flow` activation.
 Load prompt files on demand, only for the stage the user requests.
 
 ---
@@ -32,56 +32,56 @@ Load prompt files on demand, only for the stage the user requests.
 
 | Command | What it does |
 |---------|-------------|
-| `/seo-ops-analisis flow` | Show FLOW overview + stage menu |
-| `/seo-ops-analisis flow find [url\|topic]` | Find-stage: keyword research, gap analysis, SERP intent mapping (5 prompts) |
-| `/seo-ops-analisis flow leverage [url]` | Leverage-stage: backlink strategy, off-site authority (1 prompt) |
-| `/seo-ops-analisis flow optimize [url]` | Optimize-stage: select 2-3 most relevant of 21 prompts based on context |
-| `/seo-ops-analisis flow win [url]` | Win-stage: BOFU, conversion rate, dual-surface scorecard (3 prompts) |
-| `/seo-ops-analisis flow local [url]` | Local-stage: GBP optimization, meta, title tags, local audits (11 prompts) |
-| `/seo-ops-analisis flow prompts` | Full index of all 41 prompts (stage, name, trigger conditions) |
-| `/seo-ops-analisis flow sync` | Pull latest prompt files from github.com/AgriciDaniel/flow |
+| `/seo-ops-analyze flow` | Show FLOW overview + stage menu |
+| `/seo-ops-analyze flow find [url\|topic]` | Find-stage: keyword research, gap analysis, SERP intent mapping (5 prompts) |
+| `/seo-ops-analyze flow leverage [url]` | Leverage-stage: backlink strategy, off-site authority (1 prompt) |
+| `/seo-ops-analyze flow optimize [url]` | Optimize-stage: select 2-3 most relevant of 21 prompts based on context |
+| `/seo-ops-analyze flow win [url]` | Win-stage: BOFU, conversion rate, dual-surface scorecard (3 prompts) |
+| `/seo-ops-analyze flow local [url]` | Local-stage: GBP optimization, meta, title tags, local audits (11 prompts) |
+| `/seo-ops-analyze flow prompts` | Full index of all 41 prompts (stage, name, trigger conditions) |
+| `/seo-ops-analyze flow sync` | Pull latest prompt files from github.com/AgriciDaniel/flow |
 
 ---
 
 ## Orchestration Logic
 
-### On `/seo-ops-analisis flow` (no sub-command)
+### On `/seo-ops-analyze flow` (no sub-command)
 1. Read `references/flow-framework.md`
 2. Show the FLOW stage overview with a one-line description of each stage
 3. Ask: which stage matches the user's current situation?
 
-### On `/seo-ops-analisis flow find [url|topic]`
+### On `/seo-ops-analyze flow find [url|topic]`
 1. Read all files in `references/prompts/find/`
 2. Apply each prompt to the URL or topic
-3. Cross-reference: "For deeper SERP clustering, see `/seo-ops-analisis cluster <seed-keyword>`"
+3. Cross-reference: "For deeper SERP clustering, see `/seo-ops-analyze cluster <seed-keyword>`"
 
-### On `/seo-ops-analisis flow leverage [url]`
+### On `/seo-ops-analyze flow leverage [url]`
 1. Read the file in `references/prompts/leverage/`
 2. Apply to the URL's current backlink context
-3. Cross-reference: "For raw backlink data, see `/seo-ops-analisis backlinks <url>`"
+3. Cross-reference: "For raw backlink data, see `/seo-ops-analyze backlinks <url>`"
 
-### On `/seo-ops-analisis flow optimize [url]`
+### On `/seo-ops-analyze flow optimize [url]`
 1. Read all file names in `references/prompts/optimize/`
 2. Read prior analysis context (URL, industry vertical, any prior skill output in conversation)
 3. Select 2-3 most relevant prompts; load only those files
-4. Apply selected prompts; note the others are accessible via `/seo-ops-analisis flow prompts`
-5. Cross-reference: "For full content quality analysis, see `/seo-ops-analisis content <url>` and `/seo-ops-analisis geo <url>`"
+4. Apply selected prompts; note the others are accessible via `/seo-ops-analyze flow prompts`
+5. Cross-reference: "For full content quality analysis, see `/seo-ops-analyze content <url>` and `/seo-ops-analyze geo <url>`"
 
-### On `/seo-ops-analisis flow win [url]`
+### On `/seo-ops-analyze flow win [url]`
 1. Read all files in `references/prompts/win/`
 2. Apply each prompt to the URL's conversion and BOFU context
-3. Cross-reference: "For SXO persona scoring, see `/seo-ops-analisis sxo <url>`"
+3. Cross-reference: "For SXO persona scoring, see `/seo-ops-analyze sxo <url>`"
 
-### On `/seo-ops-analisis flow local [url]`
+### On `/seo-ops-analyze flow local [url]`
 1. Read all files in `references/prompts/local/`
 2. Apply to the URL's local SEO context
-3. Cross-reference: "For full local SEO analysis, see `/seo-ops-analisis local <url>` and `/seo-ops-analisis maps [command]`"
+3. Cross-reference: "For full local SEO analysis, see `/seo-ops-analyze local <url>` and `/seo-ops-analyze maps [command]`"
 
-### On `/seo-ops-analisis flow prompts`
+### On `/seo-ops-analyze flow prompts`
 1. Read `references/prompts/README.md`
 2. Display the full index: all 41 prompts with stage, name, trigger conditions
 
-### On `/seo-ops-analisis flow sync`
+### On `/seo-ops-analyze flow sync`
 1. Run: `"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run sync_flow.py`
 2. Display the JSON summary (files added, updated, unchanged)
 3. Show attribution notice after sync completes
@@ -103,20 +103,20 @@ Always surface exactly 2-3 prompts. State which prompts you chose and why.
 ## Reference Files
 
 Load on-demand, do NOT load all at startup:
-- `references/flow-framework.md`: FLOW operating model (load on every `/seo-ops-analisis flow` activation)
+- `references/flow-framework.md`: FLOW operating model (load on every `/seo-ops-analyze flow` activation)
 - `references/bibliography.md`: Evidence sources; load when citing studies or statistics
-- `references/prompts/README.md`: Prompt index; load for `/seo-ops-analisis flow prompts`
-- `references/prompts/find/`: 5 prompts; load for `/seo-ops-analisis flow find`
-- `references/prompts/leverage/`: 1 prompt; load for `/seo-ops-analisis flow leverage`
-- `references/prompts/optimize/`: 21 prompts; load selectively for `/seo-ops-analisis flow optimize`
-- `references/prompts/win/`: 3 prompts; load for `/seo-ops-analisis flow win`
-- `references/prompts/local/`: 11 prompts; load for `/seo-ops-analisis flow local`
+- `references/prompts/README.md`: Prompt index; load for `/seo-ops-analyze flow prompts`
+- `references/prompts/find/`: 5 prompts; load for `/seo-ops-analyze flow find`
+- `references/prompts/leverage/`: 1 prompt; load for `/seo-ops-analyze flow leverage`
+- `references/prompts/optimize/`: 21 prompts; load selectively for `/seo-ops-analyze flow optimize`
+- `references/prompts/win/`: 3 prompts; load for `/seo-ops-analyze flow win`
+- `references/prompts/local/`: 11 prompts; load for `/seo-ops-analyze flow local`
 
 ---
 
 ## Attribution
 
-Every `/seo-ops-analisis flow` activation (any sub-command) outputs before analysis:
+Every `/seo-ops-analyze flow` activation (any sub-command) outputs before analysis:
 
 ```
 Framework and prompts © Daniel Agrici, CC BY 4.0: github.com/AgriciDaniel/flow
@@ -130,8 +130,8 @@ Do not omit or modify the attribution.
 
 | Scenario | Action |
 |----------|--------|
-| `references/flow-framework.md` missing | "FLOW reference files not synced. Run: `/seo-ops-analisis flow sync`" |
-| Prompt file missing | "Run `/seo-ops-analisis flow sync` to pull the latest prompts from the FLOW repo." |
+| `references/flow-framework.md` missing | "FLOW reference files not synced. Run: `/seo-ops-analyze flow sync`" |
+| Prompt file missing | "Run `/seo-ops-analyze flow sync` to pull the latest prompts from the FLOW repo." |
 | `sync_flow.py` network error | Display the script's stderr. Check rate limits: `gh api rate_limit`. |
 | `sync_flow.py` auth error | Run `gh auth login` then retry. |
 

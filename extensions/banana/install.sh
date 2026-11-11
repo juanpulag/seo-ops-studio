@@ -7,7 +7,7 @@ set -euo pipefail
 main() {
     SKILL_DIR="${HOME}/.claude/skills/seo-ops-image-gen"
     AGENT_DIR="${HOME}/.claude/agents"
-    SEO_SKILL_DIR="${HOME}/.claude/skills/seo-ops-analisis"
+    SEO_SKILL_DIR="${HOME}/.claude/skills/seo-ops-analyze"
     # MCP servers live in ~/.claude.json (the file `claude mcp add` writes).
     # NOT ~/.claude/settings.json - `mcpServers` is not a key Claude Code reads
     # there, so entries written to settings.json silently never load.
@@ -163,9 +163,9 @@ PY
     for installed_doc in "${SKILL_DIR}/SKILL.md" "${SKILL_DIR}/references/"*.md "${AGENT_DIR}/seo-ops-image-gen.md"; do
         [ -f "${installed_doc}" ] || continue
         temp_doc="${installed_doc}.seo-ops-studio-tmp"
-        sed -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run#"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" run#g' \
-            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" setup#"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" setup#g' \
-            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" doctor#"$HOME/.claude/skills/seo-ops-analisis/scripts/seo-ops" doctor#g' \
+        sed -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" run#"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" run#g' \
+            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" setup#"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" setup#g' \
+            -e 's#"${CLAUDE_PLUGIN_ROOT}/scripts/seo-ops" doctor#"$HOME/.claude/skills/seo-ops-analyze/scripts/seo-ops" doctor#g' \
             "${installed_doc}" > "${temp_doc}"
         mv "${temp_doc}" "${installed_doc}"
     done
@@ -180,12 +180,12 @@ PY
     echo "Usage:"
     echo "  1. Start Claude Code:  claude"
     echo "  2. Run commands:"
-    echo "     /seo-ops-analisis image-gen og \"Professional SaaS dashboard\""
-    echo "     /seo-ops-analisis image-gen hero \"Dramatic sunset over city skyline\""
-    echo "     /seo-ops-analisis image-gen product \"Wireless headphones on marble\""
-    echo "     /seo-ops-analisis image-gen infographic \"SEO ranking factors 2026\""
-    echo "     /seo-ops-analisis image-gen custom \"Any creative concept\""
-    echo "     /seo-ops-analisis image-gen batch \"Product variations\" 3"
+    echo "     /seo-ops-analyze image-gen og \"Professional SaaS dashboard\""
+    echo "     /seo-ops-analyze image-gen hero \"Dramatic sunset over city skyline\""
+    echo "     /seo-ops-analyze image-gen product \"Wireless headphones on marble\""
+    echo "     /seo-ops-analyze image-gen infographic \"SEO ranking factors 2026\""
+    echo "     /seo-ops-analyze image-gen custom \"Any creative concept\""
+    echo "     /seo-ops-analyze image-gen batch \"Product variations\" 3"
     echo ""
     echo "Full docs: extensions/banana/README.md"
     echo "To uninstall: ./extensions/banana/uninstall.sh"

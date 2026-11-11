@@ -12,7 +12,7 @@ import pytest
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO_ROOT / "scripts"
-OPS_SKILLS = ["seo-ops", "seo-ops-configurar"]
+OPS_SKILLS = ["seo-ops", "seo-ops-setup"]
 OPS_SCRIPTS = ["ops_setup.py", "ops_pdf.py"]
 
 
@@ -59,17 +59,17 @@ def test_ops_scripts_are_allowlisted():
 
 def test_templates_exist():
     for rel in [
-        "templates/credenciales/google-api.json",
-        "templates/credenciales/backlinks-api.json",
+        "templates/credentials/google-api.json",
+        "templates/credentials/backlinks-api.json",
     ]:
         assert (REPO_ROOT / rel).is_file(), rel
-    for rel in ["templates/credenciales/google-api.json", "templates/credenciales/backlinks-api.json"]:
+    for rel in ["templates/credentials/google-api.json", "templates/credentials/backlinks-api.json"]:
         json.loads((REPO_ROOT / rel).read_text(encoding="utf-8"))
 
 
 def test_credential_templates_hold_no_secrets():
     for name in ["google-api.json", "backlinks-api.json"]:
-        data = json.loads((REPO_ROOT / "templates" / "credenciales" / name).read_text(encoding="utf-8"))
+        data = json.loads((REPO_ROOT / "templates" / "credentials" / name).read_text(encoding="utf-8"))
         for key, value in data.items():
             if not key.startswith("_"):
                 assert value is None, f"{name}:{key} must ship empty"
@@ -123,7 +123,7 @@ def test_credits_and_license_keep_upstream_attribution():
 
 
 def test_basic_edition_ships_no_premium_layer():
-    for skill in ["seo-ops-cliente", "seo-ops-auditoria", "seo-ops-backlog", "seo-ops-tablero"]:
+    for skill in ["seo-ops-client", "seo-ops-site-audit", "seo-ops-backlog", "seo-ops-dashboard"]:
         assert not (REPO_ROOT / "skills" / skill).exists(), skill
-    for script in ["ops_cliente.py", "ops_export.py"]:
+    for script in ["ops_client.py", "ops_export.py"]:
         assert not (SCRIPTS / script).exists(), script

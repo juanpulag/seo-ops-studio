@@ -112,7 +112,7 @@ def test_source_score_consistency_runs_without_a_scoring_factors_block() -> None
 
 # ─── Repo-wide: no competing instruction to score unmeasured data ───────────
 
-FREE_SOURCES_REF = REPO_ROOT / "skills" / "seo-ops-analisis" / "references" / "free-backlink-sources.md"
+FREE_SOURCES_REF = REPO_ROOT / "skills" / "seo-ops-analyze" / "references" / "free-backlink-sources.md"
 
 
 def test_shared_reference_does_not_contradict_the_no_score_rule() -> None:

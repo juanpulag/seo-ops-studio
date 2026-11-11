@@ -18,7 +18,7 @@ $SkillDir = Join-Path $HOME ".claude/skills"
 # there, so entries written to settings.json silently never load.
 $McpConfigJson = Join-Path $HOME ".claude.json"
 
-if (-not (Test-Path (Join-Path $SkillDir "seo-ops-analisis"))) {
+if (-not (Test-Path (Join-Path $SkillDir "seo-ops-analyze"))) {
     throw "seo-ops-studio base plugin not installed."
 }
 
@@ -58,4 +58,4 @@ Move-Item -Path $TempConfigJson -Destination $McpConfigJson -Force
 Write-Host "Wrote mcpServers.ahrefs to $McpConfigJson"
 
 Write-Host ""
-Write-Host "Done. Open a new Claude Code session and run /seo-ops-analisis ahrefs metrics <url>."
+Write-Host "Done. Open a new Claude Code session and run /seo-ops-analyze ahrefs metrics <url>."

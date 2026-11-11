@@ -117,7 +117,7 @@ jobs:
         run: |
           $ErrorActionPreference = "Stop"
           ./install.ps1
-          $skillRoot = Join-Path $env:USERPROFILE ".claude\skills\seo-ops-analisis"
+          $skillRoot = Join-Path $env:USERPROFILE ".claude\skills\seo-ops-analyze"
           $required = @(
             "SKILL.md",
             "requirements.txt",
@@ -136,7 +136,7 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
-          $skillRoot = Join-Path $env:USERPROFILE ".claude\skills\seo-ops-analisis"
+          $skillRoot = Join-Path $env:USERPROFILE ".claude\skills\seo-ops-analyze"
           $runtime = Join-Path $skillRoot "scripts\runtime.py"
           # Run the runtime with the interpreter the installer chose, read from
           # the venv it built. 'py -3' may be a different, unsupported Python.
@@ -171,7 +171,7 @@ jobs:
           if ($uninstallOutput -notmatch [regex]::Escape($expectedSummary)) {
             throw "Uninstaller summary did not report all removed entries. Output: $uninstallOutput"
           }
-          if (Test-Path (Join-Path $skills "seo-ops-analisis")) { throw "Orchestrator skill remains" }
+          if (Test-Path (Join-Path $skills "seo-ops-analyze")) { throw "Orchestrator skill remains" }
           if (Get-ChildItem -Path $skills -Directory -Filter "seo-*" -ErrorAction SilentlyContinue) {
             throw "SEO sub-skill directories remain"
           }
@@ -275,7 +275,7 @@ jobs:
         run: |
           $ErrorActionPreference = "Stop"
           ./install.ps1
-          $skillRoot = Join-Path $env:USERPROFILE ".claude\skills\seo-ops-analisis"
+          $skillRoot = Join-Path $env:USERPROFILE ".claude\skills\seo-ops-analyze"
           $required = @(
             "SKILL.md",
             "requirements.txt",
@@ -294,7 +294,7 @@ jobs:
         shell: powershell
         run: |
           $ErrorActionPreference = "Stop"
-          $skillRoot = Join-Path $env:USERPROFILE ".claude\skills\seo-ops-analisis"
+          $skillRoot = Join-Path $env:USERPROFILE ".claude\skills\seo-ops-analyze"
           $runtime = Join-Path $skillRoot "scripts\runtime.py"
           # Run the runtime with the interpreter the installer chose, read from
           # the venv it built. 'py -3' may be a different, unsupported Python.
@@ -329,7 +329,7 @@ jobs:
           if ($uninstallOutput -notmatch [regex]::Escape($expectedSummary)) {
             throw "Uninstaller summary did not report all removed entries. Output: $uninstallOutput"
           }
-          if (Test-Path (Join-Path $skills "seo-ops-analisis")) { throw "Orchestrator skill remains" }
+          if (Test-Path (Join-Path $skills "seo-ops-analyze")) { throw "Orchestrator skill remains" }
           if (Get-ChildItem -Path $skills -Directory -Filter "seo-*" -ErrorAction SilentlyContinue) {
             throw "SEO sub-skill directories remain"
           }

@@ -18,12 +18,12 @@ The recommended path. Inside Claude Code:
 ```
 /plugin marketplace add juanpulag/seo-ops-studio
 /plugin install seo-ops-studio@seo-ops-studio
-/seo-ops-analisis setup
+/seo-ops-analyze setup
 ```
 
-Plugin installation does not run package managers. `/seo-ops-analisis setup` is an explicit,
+Plugin installation does not run package managers. `/seo-ops-analyze setup` is an explicit,
 one-time provisioning step that writes the virtual environment and browser only
-to Claude's persistent plugin data. Use `/seo-ops-analisis doctor` for a read-only check.
+to Claude's persistent plugin data. Use `/seo-ops-analyze doctor` for a read-only check.
 
 ### Manual Install (Unix, macOS, Linux)
 
@@ -68,11 +68,11 @@ cd seo-ops-studio
 3. **Verify the managed runtime**
 
 The installer delegates dependency and Chromium provisioning to the same runtime
-used by every skill. It creates `~/.claude/skills/seo-ops-analisis/.venv/` and never falls
+used by every skill. It creates `~/.claude/skills/seo-ops-analyze/.venv/` and never falls
 back to global or user package installation.
 
 ```bash
-~/.claude/skills/seo-ops-analisis/scripts/seo-ops doctor
+~/.claude/skills/seo-ops-analyze/scripts/seo-ops doctor
 ```
 
 If core setup failed, rerun the inspected installer. If only Chromium failed,
@@ -84,11 +84,11 @@ The installer copies files to:
 
 | Component | Path |
 |-----------|------|
-| Main skill | `~/.claude/skills/seo-ops-analisis/` |
+| Main skill | `~/.claude/skills/seo-ops-analyze/` |
 | Sub-skills | `~/.claude/skills/seo-*/` |
 | Subagents | `~/.claude/agents/seo-*.md` |
-| Runtime launcher | `~/.claude/skills/seo-ops-analisis/scripts/seo-ops` |
-| Isolated Python | `~/.claude/skills/seo-ops-analisis/.venv/` |
+| Runtime launcher | `~/.claude/skills/seo-ops-analyze/scripts/seo-ops` |
+| Isolated Python | `~/.claude/skills/seo-ops-analyze/.venv/` |
 
 ## Verify Installation
 
@@ -101,7 +101,7 @@ claude
 2. Check that the skill is loaded:
 
 ```
-/seo-ops-analisis
+/seo-ops-analyze
 ```
 
 You should see a help message or prompt for a URL.
@@ -145,7 +145,7 @@ curl -fsSL https://raw.githubusercontent.com/juanpulag/seo-ops-studio/main/insta
 Ensure the skill is installed in the correct location:
 
 ```bash
-ls ~/.claude/skills/seo-ops-analisis/SKILL.md
+ls ~/.claude/skills/seo-ops-analyze/SKILL.md
 ```
 
 If the file doesn't exist, re-run the installer.
@@ -155,7 +155,7 @@ If the file doesn't exist, re-run the installer.
 Run the managed setup again:
 
 ```bash
-~/.claude/skills/seo-ops-analisis/scripts/seo-ops setup
+~/.claude/skills/seo-ops-analyze/scripts/seo-ops setup
 ```
 
 ### Playwright screenshot errors
@@ -163,8 +163,8 @@ Run the managed setup again:
 Run the managed setup again and inspect the result:
 
 ```bash
-~/.claude/skills/seo-ops-analisis/scripts/seo-ops setup
-~/.claude/skills/seo-ops-analisis/scripts/seo-ops doctor
+~/.claude/skills/seo-ops-analyze/scripts/seo-ops setup
+~/.claude/skills/seo-ops-analyze/scripts/seo-ops doctor
 ```
 
 ### Permission errors on Unix
@@ -172,5 +172,5 @@ Run the managed setup again and inspect the result:
 Make sure scripts are executable:
 
 ```bash
-chmod +x ~/.claude/skills/seo-ops-analisis/scripts/*.py
+chmod +x ~/.claude/skills/seo-ops-analyze/scripts/*.py
 ```
